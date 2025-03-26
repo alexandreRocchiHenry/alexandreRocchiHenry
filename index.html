@@ -2,37 +2,27 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alexandre Rocchi – Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 2em;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    iframe {
-      width: 100%;
-      height: 100vh;
-      border: none;
-    }
-  </style>
+  <title>Accueil - Alexandre Rocchi</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-<header>
-  <h1>Alexandre Rocchi</h1>
-  <p>Ingénieur IA – Étudiant Mastère Spécialisé à Télécom Paris</p>
-  <p><a href="mailto:alexandrerocchi2@gmail.com">alexandrerocchi2@gmail.com</a> | 
-     <a href="https://www.linkedin.com/in/alexandre-rocchi-henry-47928b20a/" target="_blank">LinkedIn</a></p>
-</header>
-
-<h2>Mon CV</h2>
-<iframe src="ALEXANDRE_ROCCHI_CV__FRENCH_Version__TParis___V2_.pdf"></iframe>
-
+  <div id="header-placeholder"></div>
+    <script>
+      fetch('assets/html/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        });
+    </script>
+  <main>
+    <section class="intro">
+      <h2>Bienvenue sur mon site !</h2>
+      <p>Étudiant en Intelligence Artificielle passionné par le Machine Learning, je vous invite à découvrir mon parcours et mes projets.</p>
+      <img src="assets/images/profile.jpg" alt="Photo d'Alexandre Rocchi">
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Alexandre Rocchi. Tous droits réservés.</p>
+  </footer>
 </body>
 </html>
