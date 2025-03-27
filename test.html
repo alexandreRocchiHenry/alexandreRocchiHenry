@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Test Dropdown</title>
+<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+<style>
+html { scroll-behavior: smooth; }
+.primary-navigation {
+  text-align: center;
+  font-family: Arvo, serif;
+  padding-top: 50px;
+}
+.primary-navigation ul { margin:0; padding:0; }
+.primary-navigation ul li {
+  list-style:none;
+  display:inline-block;
+  position:relative;
+  padding:0 20px;
+  border-left:2px solid #3ca0e7;
+}
+.primary-navigation ul li:first-child { border-left:none; }
+.primary-navigation a { text-decoration:none; color:black; padding:10px; display:block; }
+.primary-navigation a:hover { color:#3ca0e7; }
+.primary-navigation ul li ul.dropdown {
+  visibility:hidden; opacity:0; display:none;
+  position:absolute; top:100%; left:0;
+  background:white; box-shadow:0 3px 5px -1px #ccc;
+  padding-top:10px; min-width:150px;
+}
+.primary-navigation ul li:hover > ul.dropdown {
+  visibility:visible; opacity:1; display:block;
+}
+.primary-navigation ul li ul.dropdown li {
+  display:block; margin:0;
+}
+.primary-navigation ul li ul.dropdown li a:hover {
+  padding-left:10px; border-left:2px solid #3ca0e7;
+}
+</style>
+</head>
+<body>
+
+<nav role="navigation" class="primary-navigation">
+  <ul>
+    <li><a href="#">Accueil</a></li>
+    <li>
+      <a href="#">Certifications ▾</a>
+      <ul class="dropdown">
+        <li><a href="#diplomes">Diplômes</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#autres">Autres</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="diplomes" style="height:100vh; background:#eee;"><h2>Diplômes</h2></section>
+<section id="certifications" style="height:100vh;"><h2>Certifications</h2></section>
+<section id="autres" style="height:100vh; background:#eee;"><h2>Autres</h2></section>
+
+</body>
+</html>

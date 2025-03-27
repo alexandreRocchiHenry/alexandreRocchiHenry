@@ -1,41 +1,64 @@
+
+<script>
+  function scrollToNextSlide() {
+    window.scrollBy({ top: window.innerHeight, left: 0, behavior: 'smooth' });
+  }
+</script>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Certifications - Alexandre Rocchi</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/certifications.css">
 </head>
-<body>
-  <header>
-    <h1>Certifications & Diplômes</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="projects.html">Projets</a></li>
-        <li><a href="skills.html">Compétences</a></li>
-        <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="certifications">
-      <h2>Diplômes</h2>
-      <ul>
-        <li>MS Intelligence Artificielle - Télécom Paris</li>
-        <li>Ingénieur en Automatique et Systèmes Intelligents - ENSE3 Grenoble INP</li>
-        <li>Classes Préparatoires Maths-Physiques - Lycée Massena</li>
-      </ul>
-      <h2>Certifications</h2>
-      <ul>
-        <li>(Liste tes certifications ici : Coursera, Udemy, etc.)</li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Alexandre Rocchi. Tous droits réservés.</p>
-  </footer>
-</body>
+
+    <main>
+      <!-- Slide n°1 : Diplômes -->
+      <section id="slide1" class="first-slide">
+        <div class="header-container">
+          <div id="header-placeholder"></div>
+          <script>
+            fetch('assets/html/header.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+              });
+          </script>
+        </div>
+        <div class="content-container">
+          <h2>Diplômes</h2>
+          <ul>
+            <li>MS Intelligence Artificielle - Télécom Paris</li>
+            <li>Ingénieur en Automatique et Systèmes Intelligents - ENSE3 Grenoble INP</li>
+            <li>Classes Préparatoires Maths-Physiques - Lycée Massena</li>
+          </ul>
+        </div>
+
+        <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+      </section>
+      
+    
+      <!-- Slide n°2 : Certifications -->
+      <section id="slide2" class="certifications">
+        <h2>Certifications</h2>
+        <ul>
+          <li>Coursera : Machine Learning</li>
+          <li>Udemy : Deep Learning A-Z</li>
+          <!-- etc. -->
+        </ul>
+      </section>
+    
+      <!-- Slide n°3 : Autres ou Expériences, etc. -->
+      <section id="slide3">
+        <h2>Autre slide</h2>
+        <p>Contenu supplémentaire.</p>
+      </section>
+    </main>
+
 </html>
