@@ -13,7 +13,7 @@
   <main>
     <!-- Hero / Intro Section -->
     <section class="intro">
-      <p>Hey, I m</p>
+      <p>Hey, I'm</p>
       <h1>Alexandre Rocchi</h1>
       <p>
         Data scientist student at Telecom Paris
@@ -33,12 +33,54 @@
       <img src="assets/images/profile.jpg" alt="Photo d'Alexandre Rocchi">
     </section>
 
+    <section id="cursus">
+      <h2 class="cursus-heading">Mon Cursus</h2>
+      
+      <!-- Horizontal Timeline Container -->
+      <div id="timeline-container">
+        <div id="timeline">
+          <!-- Timeline Items -->
+          <div class="timeline-item" data-year="2022" data-index="0">
+            <span class="year">2022</span>
+            <p>Début de mes études supérieures...</p>
+          </div>
+          
+          <div class="timeline-item" data-year="2023" data-index="1">
+            <span class="year">2023</span>
+            <p>Stage en Data Science...</p>
+          </div>
+          
+          <div class="timeline-item" data-year="2024" data-index="2">
+            <span class="year">2024</span>
+            <p>Projet IA majeur...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div class="dots-timeline">
+      <div class="dots-container">
+        <!-- First dot -->
+        <div class="dot" data-index="0"></div>
+        
+        <!-- Line segment between dots 0 and 1 -->
+        <div class="dot-connection" data-index="0"></div>
+        
+        <!-- Second dot -->
+        <div class="dot" data-index="1"></div>
+        
+        <!-- Line segment between dots 1 and 2 -->
+        <div class="dot-connection" data-index="1"></div>
+        
+        <!-- Third dot -->
+        <div class="dot" data-index="2"></div>
+      </div>
+    </div>
+    
     <section class="big-white-section">
       <h2>Grande Section Blanche</h2>
       <p>Contenu éventuel ici...</p>
     </section>
-
-    
   </main>
 
   <!-- Footer -->
@@ -66,6 +108,82 @@
       }
     });
   </script>
-
+  
+  <script>// Timeline animation script
+    const items = document.querySelectorAll('.timeline-item');
+    const dots = document.querySelectorAll('.dot');
+    const connections = document.querySelectorAll('.dot-connection');
+    const dotsTimeline = document.querySelector('.dots-timeline');
+    const timeline = document.getElementById('timeline');
+    
+    // Different offsets for items and dots (for activation timing)
+    const itemOffsets = [0, 300, 600]; 
+    const dotOffsets = [0, 300, 600]; 
+    
+    // Debug mode (set to true to see console logs)
+    const debug = false;
+    
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY;
+      
+      // Get section positions
+      const cursusSection = document.getElementById('cursus');
+      const cursusSectionTop = cursusSection.offsetTop;
+      const whiteSection = document.querySelector('.big-white-section');
+      const whiteSectionTop = whiteSection.offsetTop;
+      
+      if (debug) {
+        console.clear();
+        console.log('Scroll position:', scrollPosition);
+        console.log('Cursus section top:', cursusSectionTop);
+      }
+      
+      // Timeline is visible in the cursus section area
+      const inCursusArea = scrollPosition >= cursusSectionTop - 200 && 
+                          scrollPosition < whiteSectionTop -850;
+      
+      // Handle dots-timeline visibility
+      dotsTimeline.classList.toggle('visible', inCursusArea);
+      
+      // If we're not in cursus area, make sure everything is inactive
+      if (!inCursusArea) {
+        // Remove active class from all items, dots and connections
+        items.forEach(item => item.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        connections.forEach(connection => connection.classList.remove('active'));
+        return; // Exit early
+      }
+      
+      // If we're in the cursus area, process items and dots
+      
+      // Process timeline items
+      items.forEach((item, index) => {
+        const itemTriggerPoint = cursusSectionTop + itemOffsets[index];
+        
+        if (debug) {
+          console.log(`Item ${index} trigger:`, itemTriggerPoint);
+        }
+        
+        item.classList.toggle('active', scrollPosition >= itemTriggerPoint);
+      });
+      
+      // Process dots separately
+      dots.forEach((dot, index) => {
+        const dotTriggerPoint = cursusSectionTop + dotOffsets[index];
+        
+        if (debug) {
+          console.log(`Dot ${index} trigger:`, dotTriggerPoint);
+        }
+        
+        const isActive = scrollPosition >= dotTriggerPoint;
+        dot.classList.toggle('active', isActive);
+        
+        // Handle connections between dots
+        if (index > 0 && connections[index-1]) {
+          connections[index-1].classList.toggle('active', isActive);
+        }
+      });
+    }); 
+  </script>
 </body>
 </html>

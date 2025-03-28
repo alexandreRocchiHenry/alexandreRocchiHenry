@@ -1,123 +1,336 @@
 /* Basic Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
-  
-  .intro {
-    position: relative;    /* Needed to position the pseudo-element absolutely */
-    overflow: hidden;      /* Ensures the blurred background doesn't exceed section bounds */
-    min-height: 100vh;     /* Keep the full-screen hero if desired */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  /* Pseudo-element for the blurred background image */
-  .intro::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("../images/hue_background.png") center/cover no-repeat;
-    filter: blur(5px);           /* Adjust blur to your preference */
-    z-index: 0;                  /* Stay behind the text */
-  }
-  
-  /* Keep text and other elements on top of the blurred image */
-  .intro h1,
-  .intro p,
-  .intro .scroll-down {
-    position: relative;
-    z-index: 1;
-    color: #4d3737;                 /* White text often looks nice over a dark image */
-  }
-  
-  /* Example large text style for your name */
-  .intro h1 {
-    font-size: 4rem;            /* Adjust as desired */
-    margin-bottom: 0.02rem;
-  }
-  
-  /* Example smaller text for the paragraph */
-  .intro p {
-    font-size: 1.5rem;
-    max-width: 700px;
-    margin: 0 auto 0.02rem auto;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-  }
-
-  @keyframes hover-bounce {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-5px); }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  .scroll-down a {
-    font-size: 2rem;
-    color: #fff;
-    text-decoration: none;
-    animation: bounce 2s infinite;
-  }
-  
-  .scroll-down a:hover {
-    color: #8f8f8f;
-    scale: 1.2;
-    animation: hover-bounce 0.5s infinite;
-    text-shadow: 0 5px 8px rgba(0, 0, 0, 0.5); 
-  }
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
 
-  /* Content Section */
-  #content {
-    padding: 2rem;
-    background: #f9f9f9;
-    text-align: center;
-    height: 100vh;
-  }
-  
-  /* Header Placeholder */
-  #header-placeholder {
-    position: absolute;    /* Start at bottom of the page */
-    bottom: 0;
-    width: 100%;
-    background: #fff;
-    border-top: 1px solid #ccc;
-    text-align: center;
-    transition: all 0.3s ease;
-    z-index: 1;
-  }
-  
-  /* Sticky class: when scrolled, the header goes to the top */
-  #header-placeholder.sticky {
-    position: fixed;
-    top: 0;
-    bottom: auto;
-    left: 0;
-    z-index: 999;
-  }
-  
-  
-  .big-white-section {
-    background-color: #fff; /* Fond blanc */
-    height: 200vh;          /* 200% de la hauteur de l'écran */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* Ajoutez d'autres propriétés si besoin */
-  }
-  
+/* Hero/Intro Section */
+.intro {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/hue_background.png") center/cover no-repeat;
+  filter: blur(5px);
+  z-index: 0;
+}
+
+.intro h1,
+.intro p,
+.intro .scroll-down {
+  position: relative;
+  z-index: 1;
+  color: #4d3737;
+}
+
+.intro h1 {
+  font-size: 4rem;
+  margin-bottom: 0.02rem;
+}
+
+.intro p {
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto 0.02rem auto;
+}
+
+/* Scroll Animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+@keyframes hover-bounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-5px); }
+}
+
+.scroll-down a {
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  animation: bounce 2s infinite;
+}
+
+.scroll-down a:hover {
+  color: #8f8f8f;
+  transform: scale(1.2);
+  animation: hover-bounce 0.5s infinite;
+  text-shadow: 0 5px 8px rgba(0, 0, 0, 0.5); 
+}
+
+/* Content Section */
+#content {
+  padding: 4rem 2rem;
+  background: #413535;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#content h2 {
+  color: #fff;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+#content p {
+  color: #ddd;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+#content img {
+  max-width: 300px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+
+#cursus {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+  min-height: 200vh; /* Increased height to allow for scrolling */
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.cursus-heading {
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 2.5rem;
+}
+
+#timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  min-height: 180vh; /* Taller to allow for more scrolling */
+  overflow: visible;
+}
+
+/* Timeline Layout */
+#timeline {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  display: block; /* Changed from flex to allow sticky positioning */
+}
+
+/* Individual timeline item containers */
+.timeline-item-container {
+  position: relative;
+  height: 70vh; /* Height of each item section */
+  margin-bottom: 30vh; /* Space between items */
+}
+
+/* Spacers to create vertical distance */
+.timeline-spacer {
+  height: 50vh; /* Adjust this value to create more space between items */
+  width: 100%;
+}
+
+
+/* Timeline Items - Sticky Layout */
+/* Timeline Items - Sticky Layout */
+.timeline-item {
+  position: sticky;
+  top: 40vh; /* Stick to this position from viewport top */
+  width: 300px;
+  margin: 0 auto; /* Center the item horizontally */
+  padding: 2rem;
+  background: #070606;
+  color: white;
+  border-radius: 8px;
+  opacity: 0;
+  transform: scale(0.9); /* Only scale, no translation */
+  transition: 
+
+    visibility 0s 0s;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  z-index: 2;
+  visibility: hidden;
+}
+
+
+/* Positioning for each item */
+.timeline-item[data-index="0"] {
+  left: 20%; /* Position from left */
+}
+
+.timeline-item[data-index="1"] {
+  left: 40%; /* Position from left */
+}
+
+.timeline-item[data-index="2"] {
+  left: 60%; /* Position from left */
+}
+
+
+.timeline-item.active {
+  opacity: 1;
+  visibility: visible;
+  position: fixed;
+  transform: scale(1); /* Only scale up, no translation */
+  transition: 
+    visibility 0s 0s;
+}
+.timeline-item .year {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #4e98db;
+}
+
+.timeline-item p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Dots Timeline (Navigation) */
+.dots-timeline {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.dots-timeline.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.dots-container {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  position: relative;
+  background: rgba(255,255,255,0.8);
+  border-radius: 30px;
+  padding: 15px 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.dots-container::before {
+  content: '';
+  position: absolute;
+  width: calc(100% - 60px);
+  height: 3px;
+  background-color: #AEB6BF;
+  z-index: 0;
+}
+
+.dot {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #AEB6BF;
+  margin: 0;
+  transition: all 0.7s ease;
+  transform: scale(1);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 4px rgba(174, 182, 191, 0.2);
+}
+
+.dot.active {
+  background-color: #2C3E50;
+  transform: scale(1.3);
+  box-shadow: 0 0 0 4px rgba(44, 62, 80, 0.3);
+}
+
+.dot-connection {
+  flex-grow: 1;
+  height: 3px;
+  background-color: #AEB6BF;
+  transition: background-color 0.7s ease, transform 0.5s ease;
+  transform: scaleX(1);
+  transform-origin: left;
+  z-index: 0;
+}
+
+.dot-connection.active {
+  background-color: #2C3E50;
+}
+
+/* White Section */
+.big-white-section {
+  background-color: #fff;
+  min-height: 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.big-white-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Header Placeholder */
+#header-placeholder {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#header-placeholder.sticky {
+  position: fixed;
+  top: 0;
+  bottom: auto;
+  left: 0;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
