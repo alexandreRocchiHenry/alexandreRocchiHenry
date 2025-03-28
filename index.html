@@ -3,26 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <title>Accueil - Alexandre Rocchi</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/acceuil.css">
 </head>
 <body>
+
+  <!-- Header placeholder (will be loaded by fetch) -->
   <div id="header-placeholder"></div>
-    <script>
-      fetch('assets/html/header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('header-placeholder').innerHTML = data;
-        });
-    </script>
+  
   <main>
+    <!-- Hero / Intro Section -->
     <section class="intro">
-      <h2>Bienvenue sur mon site !</h2>
-      <p>Étudiant en Intelligence Artificielle passionné par le Machine Learning, je vous invite à découvrir mon parcours et mes projets.</p>
+      <p>Hey, I m</p>
+      <h1>Alexandre Rocchi</h1>
+      <p>
+        Data scientist student at Telecom Paris
+      </p>
+      <div class="scroll-down">
+        <a href="#content">▼</a>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section id="content">
+      <h2>Mon Parcours</h2>
+      <p>
+        Je vous invite à découvrir mon parcours, mes expériences 
+        et mes projets dans le domaine de l'IA.
+      </p>
       <img src="assets/images/profile.jpg" alt="Photo d'Alexandre Rocchi">
     </section>
+
+    <section class="big-white-section">
+      <h2>Grande Section Blanche</h2>
+      <p>Contenu éventuel ici...</p>
+    </section>
+
+    
   </main>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Alexandre Rocchi. Tous droits réservés.</p>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Load the external header file into the placeholder
+    fetch('assets/html/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    // Make the header sticky on scroll
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header-placeholder');
+      // Trigger stickiness once we scroll beyond a certain threshold
+      if (window.scrollY > window.innerHeight - 50) {
+        header.classList.add('sticky');
+      } else {
+        header.classList.remove('sticky');
+      }
+    });
+  </script>
+
 </body>
 </html>
