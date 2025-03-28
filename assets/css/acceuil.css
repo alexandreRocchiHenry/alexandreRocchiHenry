@@ -151,7 +151,7 @@ body {
 .timeline-item-container {
   position: relative;
   height: 70vh; /* Height of each item section */
-  margin-bottom: 30vh; /* Space between items */
+  margin-bottom: 50vh; /* Space between items */
 }
 
 /* Spacers to create vertical distance */
@@ -165,8 +165,9 @@ body {
 /* Timeline Items - Sticky Layout */
 .timeline-item {
   position: sticky;
-  top: 40vh; /* Stick to this position from viewport top */
-  width: 300px;
+  top: 20vh; /* Stick to this position from viewport top */
+  width: 20%;
+  height: 50vh; /* Height of each item */
   margin: 0 auto; /* Center the item horizontally */
   padding: 2rem;
   background: #070606;
@@ -175,7 +176,6 @@ body {
   opacity: 0;
   transform: scale(0.9); /* Only scale, no translation */
   transition: 
-
     visibility 0s 0s;
   text-align: left;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
@@ -184,19 +184,18 @@ body {
 }
 
 
-/* Positioning for each item */
+/* Positioning for each item - adjust these values to create more distance */
 .timeline-item[data-index="0"] {
-  left: 20%; /* Position from left */
+  left: 10%; /* Position from left (was 20%) */
 }
 
 .timeline-item[data-index="1"] {
-  left: 40%; /* Position from left */
+  left: 40%; /* Position from left (was 40%) */
 }
 
 .timeline-item[data-index="2"] {
-  left: 60%; /* Position from left */
+  left: 70%; /* Position from left (was 60%) */
 }
-
 
 .timeline-item.active {
   opacity: 1;
@@ -292,7 +291,7 @@ body {
 }
 
 /* White Section */
-.big-white-section {
+.projects {
   background-color: #fff;
   min-height: 200vh;
   display: flex;
@@ -302,7 +301,7 @@ body {
   padding: 4rem 2rem;
 }
 
-.big-white-section h2 {
+.projects h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: #333;
@@ -333,4 +332,66 @@ footer {
   color: #fff;
   text-align: center;
   padding: 2rem;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 370px;
+  overflow: hidden;
+  background-image: linear-gradient(to top right, #8B5CF6, #EC4899);
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 1200px;
+  perspective: 1000px;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 200px;
+  height: 320px;
+  text-align: justify;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.5s;
+  left: calc(50% - 110px);
+  top: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform opacity;
+}
+
+#next, #prev {
+  position: absolute;
+  top: 40%;
+  color: #fff;
+  background-color: rgba(0,0,0,0.3);
+  border: none;
+  font-size: xxx-large;
+  font-family: monospace;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#prev {
+  left: 20px;
+}
+
+#next {
+  right: 20px;
+}
+
+/* Hover effects for buttons */
+#next:hover, #prev:hover {
+  background-color: rgba(0,0,0,0.6);
+  transform: scale(1.1);
 }

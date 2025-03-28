@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Accueil - Alexandre Rocchi</title>
-  <link rel="stylesheet" href="assets/css/acceuil.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Accueil - Alexandre Rocchi</title>
+    <link rel="stylesheet" href="assets/css/acceuil.css">
+    <!-- Add these new links -->
+    <link rel="stylesheet" href="assets/css/projects-carousel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  </head>
 <body>
 
   <!-- Header placeholder (will be loaded by fetch) -->
@@ -41,18 +45,23 @@
         <div id="timeline">
           <!-- Timeline Items -->
           <div class="timeline-item" data-year="2022" data-index="0">
-            <span class="year">2022</span>
-            <p>Début de mes études supérieures...</p>
+            <span class="year">Lycée Masséna</span>
+            <p> CLASSES PRÉPARATOIRES MATHS PHYSIQUES, SPÉCIALITÉ INFORMATIQUE</p>
           </div>
           
           <div class="timeline-item" data-year="2023" data-index="1">
-            <span class="year">2023</span>
-            <p>Stage en Data Science...</p>
+            <span class="year">ENSE3 ‑ GRENOBLE INP</span>
+            <p>Formation en modélisation, simulation et contrôle de divers systèmes complexes et
+              intelligents. </p>
+            <p>Formation en traitement du signal et communication réseaux. Avec Spécialisation sur l’IA et divers langages de programmation.</p> 
+            <p>Sensibilisation aux enjeux du développement durable.</p>
           </div>
           
           <div class="timeline-item" data-year="2024" data-index="2">
-            <span class="year">2024</span>
-            <p>Projet IA majeur...</p>
+            <span class="year">TELECOM PARIS</span>
+            <p>Formation complète sur les divers domaine de l’IA. 
+            <p>Mise en place de divers projets utilisant du Machine Learning et du Deep Learning.</p>
+            <p>Formation pour la vision par ordinateur, les séries temporelles et le NLP.</p>
           </div>
         </div>
       </div>
@@ -76,11 +85,42 @@
         <div class="dot" data-index="2"></div>
       </div>
     </div>
-    
-    <section class="big-white-section">
-      <h2>Grande Section Blanche</h2>
-      <p>Contenu éventuel ici...</p>
-    </section>
+
+   <section class="projects-section projects">
+  <h2>Mes Projets</h2>
+  <div class="slider">
+    <div class="carousel-slide">
+      <h1>Slide 1</h1>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni magnam unde ipsam repudiandae explicabo.
+    </div>
+    <div class="carousel-slide">
+      <h1>Slide 2</h1>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni magnam unde ipsam repudiandae explicabo.
+    </div>
+    <div class="carousel-slide">
+      <h1>Slide 3</h1>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni magnam unde ipsam repudiandae explicabo.
+    </div>
+    <div class="carousel-slide">
+      <h1>Slide 4</h1>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni magnam unde ipsam repudiandae explicabo.
+    </div>
+    <div class="carousel-slide">
+      <h1>Slide 5</h1>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni magnam unde ipsam repudiandae explicabo.
+    </div>
+    <div class="carousel-slide">
+      <h1>Slide 6</h1>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni magnam unde ipsam repudiandae explicabo.
+    </div>
+    <div class="carousel-slide">
+      <h1>Slide 7</h1>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni magnam unde ipsam repudiandae explicabo.
+    </div>
+    <button id="next">></button>
+    <button id="prev"><</button>
+  </div>
+</section>
   </main>
 
   <!-- Footer -->
@@ -116,31 +156,40 @@
     const dotsTimeline = document.querySelector('.dots-timeline');
     const timeline = document.getElementById('timeline');
     
-    // Different offsets for items and dots (for activation timing)
-    const itemOffsets = [0, 300, 600]; 
-    const dotOffsets = [0, 300, 600]; 
+    // Convert vh to pixels dynamically
+    function vhToPx(vh) {
+      return (vh * window.innerHeight) / 100;
+    }
+    
+    // Different offsets for items and dots using vh units
+    const itemOffsetsVh = [0, 30, 60]; // in vh units instead of pixels
+    const dotOffsetsVh = [0, 30, 60]; // in vh units instead of pixels
     
     // Debug mode (set to true to see console logs)
     const debug = false;
     
-    window.addEventListener('scroll', function() {
+    function updateTimeline() {
       const scrollPosition = window.scrollY;
       
       // Get section positions
       const cursusSection = document.getElementById('cursus');
       const cursusSectionTop = cursusSection.offsetTop;
-      const whiteSection = document.querySelector('.big-white-section');
+      const whiteSection = document.querySelector('.projects');
       const whiteSectionTop = whiteSection.offsetTop;
       
       if (debug) {
         console.clear();
         console.log('Scroll position:', scrollPosition);
         console.log('Cursus section top:', cursusSectionTop);
+        console.log('Window height:', window.innerHeight);
       }
       
-      // Timeline is visible in the cursus section area
-      const inCursusArea = scrollPosition >= cursusSectionTop - 200 && 
-                          scrollPosition < whiteSectionTop -850;
+      // Timeline is visible in the cursus section area (using vh units)
+      const bufferTop = vhToPx(2); // 20vh buffer at top
+      const bufferBottom = vhToPx(105); // 85vh buffer at bottom
+      
+      const inCursusArea = scrollPosition >= (cursusSectionTop - bufferTop) && 
+                           scrollPosition < (whiteSectionTop - bufferBottom);
       
       // Handle dots-timeline visibility
       dotsTimeline.classList.toggle('visible', inCursusArea);
@@ -158,7 +207,8 @@
       
       // Process timeline items
       items.forEach((item, index) => {
-        const itemTriggerPoint = cursusSectionTop + itemOffsets[index];
+        const itemOffset = vhToPx(itemOffsetsVh[index]);
+        const itemTriggerPoint = cursusSectionTop + itemOffset;
         
         if (debug) {
           console.log(`Item ${index} trigger:`, itemTriggerPoint);
@@ -169,7 +219,8 @@
       
       // Process dots separately
       dots.forEach((dot, index) => {
-        const dotTriggerPoint = cursusSectionTop + dotOffsets[index];
+        const dotOffset = vhToPx(dotOffsetsVh[index]);
+        const dotTriggerPoint = cursusSectionTop + dotOffset;
         
         if (debug) {
           console.log(`Dot ${index} trigger:`, dotTriggerPoint);
@@ -183,7 +234,69 @@
           connections[index-1].classList.toggle('active', isActive);
         }
       });
-    }); 
+    }
+    
+    // Initial call
+    updateTimeline();
+    
+    // Call on scroll
+    window.addEventListener('scroll', updateTimeline);
+    
+    // Also update on window resize to recalculate vh units
+    window.addEventListener('resize', updateTimeline);
+  </script>
+
+  <script>
+    let slides = document.querySelectorAll('.slider .carousel-slide');
+    let next = document.getElementById('next');
+    let prev = document.getElementById('prev');
+    
+    // Start with a middle slide for better visual effect
+    let active = Math.min(3, Math.floor(slides.length/2)); 
+    
+    function loadShow() {
+      let stt = 0;
+      
+      // Apply styles to the active slide
+      slides[active].style.transform = `none`;
+      slides[active].style.zIndex = 1;
+      slides[active].style.filter = 'none';
+      slides[active].style.opacity = 1;
+      slides[active].style.top = '0';
+      
+      // Handle slides to the right
+      for(var i = active + 1; i < slides.length; i++) {
+          stt++;
+          slides[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
+          slides[i].style.zIndex = -stt;
+          slides[i].style.filter = 'blur(5px)';
+          slides[i].style.opacity = stt > 2 ? 0 : 0.6;
+          slides[i].style.top = `${20*stt}px`; // Add vertical offset for better 3D effect
+      }
+      
+      // Handle slides to the left
+      stt = 0;
+      for(var i = active - 1; i >= 0; i--) {
+          stt++;
+          slides[i].style.transform = `translateX(${-120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(1deg)`;
+          slides[i].style.zIndex = -stt;
+          slides[i].style.filter = 'blur(5px)';
+          slides[i].style.opacity = stt > 2 ? 0 : 0.6;
+          slides[i].style.top = `${20*stt}px`; // Add vertical offset for better 3D effect
+      }
+  }
+    
+    loadShow();
+    
+    next.onclick = function(){
+        active = active + 1 < slides.length ? active + 1 : active;
+        loadShow();
+    }
+    
+    prev.onclick = function(){
+        active = active - 1 >= 0 ? active - 1 : active;
+        loadShow();
+    }
   </script>
 </body>
 </html>
