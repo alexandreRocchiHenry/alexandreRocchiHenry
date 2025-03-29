@@ -20,23 +20,40 @@
     <section class="intro">
       <p>Salut <span class="wave">👋</span>, je suis</p>
       <h1>Alexandre Rocchi</h1>
-      <p>
-        Etudiant en MS IA, à Telecom Paris
-      </p>
-      <div class="scroll-down">
-        <a href="#content">▼</a>
-      </div>
+      <h2>Étudiant en MS IA, à Telecom Paris</h2>
+      <button class="arrow" type="button" onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})" aria-label="Scroll to content">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </section>
 
-    <!-- Content Section -->
-    <section id="content">
-      <h2>Mon Parcours</h2>
-      <p>
-        Je vous invite à découvrir mon parcours, mes expériences 
-        et mes projets dans le domaine de l'IA.
-      </p>
-      <img src="assets/images/profile.jpg" alt="Photo d'Alexandre Rocchi">
-    </section>
+ <!-- Content Section -->
+<section id="content">
+  <div class="content-text">
+    <h2>Recherche de stage</h2>
+    <p>
+      Actuement entrain de complété ma formation dans l'intelligence artificielle avec un Master Spécialisé. 
+    </p>
+    <p>
+      Je suis ingénieur diplômé de l'ENSE3 - Grenoble INP en master Automatique et Systèmes Intelligents.
+    </p>
+    <p>
+      J'ai un fort attrait pour les sujets de Computer Vision appliqués à l'environnement et à la santé.
+    </p>
+    <p>
+     je cherche un stage de 6 mois à partir de juillet 2025.
+    </p>
+    <!-- Ajoutez ici d'autres paragraphes -->
+  </div>
+  
+  <div class="content-card">
+    <div class="profile-card">
+      <div class="circle"></div>
+      <img src="assets/images/Alexandre.png" alt="Photo d'Alexandre Rocchi" class="profile-photo">
+    </div>
+  </div>
+</section>
 
     <section id="cursus">
       <h2 class="cursus-heading">Mon Cursus</h2>
