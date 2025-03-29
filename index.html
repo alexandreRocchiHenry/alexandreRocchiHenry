@@ -33,7 +33,7 @@
   <div class="content-text">
     <h2>Recherche de stage</h2>
     <p>
-      Actuement entrain de complété ma formation dans l'intelligence artificielle avec un Master Spécialisé. 
+      Actuellement entrain de complété ma formation dans l'intelligence artificielle avec un <mark>Master Spécialisé à Télécom Paris</mark>.
     </p>
     <p>
       Je suis ingénieur diplômé de l'ENSE3 - Grenoble INP en master Automatique et Systèmes Intelligents.
@@ -42,7 +42,7 @@
       J'ai un fort attrait pour les sujets de Computer Vision appliqués à l'environnement et à la santé.
     </p>
     <p>
-     je cherche un stage de 6 mois à partir de juillet 2025.
+     je cherche un <mark>stage de 6 mois à partir de juillet 2025</mark>.
     </p>
     <div class="text-box">
       <a href="assets/pdf/ALEXANDRE_ROCCHI_CV__FRENCH_Version__TParis___V2_.pdf" class="btn btn-white btn-animate" download class="btn btn-white btn-        animate">mon CV</a>
@@ -59,6 +59,7 @@
 
     <section id="cursus">
       <h2 class="cursus-heading">Mon Cursus</h2>
+      <p class="cursus-description">Voici une frise chronologique retraçant les différents établissements français où j'ai suivi une formation en mathématiques, informatique et intelligence artificielle.</p>
       
       <!-- Horizontal Timeline Container -->
       <div id="timeline-container">
@@ -66,15 +67,17 @@
           <!-- Timeline Items -->
           <div class="timeline-item" data-year="2022" data-index="0">
             <span class="year">Lycée Masséna</span>
-            <p> CLASSES PRÉPARATOIRES MATHS PHYSIQUES, SPÉCIALITÉ INFORMATIQUE</p>
+            <p>Classes préparatoires en Mathématiques, physiques et informatique</p>
+            <p>Projet sur la simulation de l'erosion des plages</p>
           </div>
           
           <div class="timeline-item" data-year="2023" data-index="1">
             <span class="year">ENSE3 ‑ GRENOBLE INP</span>
             <p>Formation en modélisation, simulation et contrôle de divers systèmes complexes et
-              intelligents. </p>
-            <p>Formation en traitement du signal et communication réseaux. Avec Spécialisation sur l’IA et divers langages de programmation.</p> 
+              intelligents.</p>
+            <p>Spécialisation sur l’IA et divers langages de programmation.</p> 
             <p>Sensibilisation aux enjeux du développement durable.</p>
+            <p>cours "AI and Autonomous systems", "Mobile Robotics" et divers cours sur les enjeux environnementaux</p>
           </div>
           
           <div class="timeline-item" data-year="2024" data-index="2">
@@ -169,6 +172,38 @@
     });
   </script>
   
+  <script>
+    // Feature detection - check if browser supports CSS view() timeline
+    const supportsViewTimeline = CSS.supports('animation-timeline: view()');
+    
+    // Only use JS fallback if browser doesn't support view() timeline
+    if (!supportsViewTimeline) {
+      document.addEventListener('DOMContentLoaded', function() {
+        const markedElements = document.querySelectorAll('mark');
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Add the highlight class when element is in view
+              entry.target.classList.add('js-highlight');
+            } else {
+              // Remove the highlight class when element is out of view
+              entry.target.classList.remove('js-highlight');
+            }
+          });
+        }, {
+          threshold: 0.3,  // Trigger when at least 30% of element is visible
+          rootMargin: '-100px 0px -100px 0px'  // Only highlight in middle section of viewport
+        });
+        
+        // Observe all marked elements
+        markedElements.forEach(mark => {
+          observer.observe(mark);
+        });
+      });
+    }
+  </script>
+
   <script>// Timeline animation script
     const items = document.querySelectorAll('.timeline-item');
     const dots = document.querySelectorAll('.dot');
@@ -182,7 +217,7 @@
     }
     
     // Different offsets for items and dots using vh units
-    const itemOffsetsVh = [0, 30, 60]; // in vh units instead of pixels
+    const itemOffsetsVh = [-3, 30, 60]; // in vh units instead of pixels
     const dotOffsetsVh = [0, 30, 60]; // in vh units instead of pixels
     
     // Debug mode (set to true to see console logs)

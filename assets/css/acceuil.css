@@ -232,8 +232,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Section Content avec mise en page en deux colonnes */
 #content {
   padding: 4rem 2rem;
+  padding-top: 10rem;
   background: #EDF1D6; /* Ivory White */
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: row; /* Disposition horizontale */
   align-items: center;
@@ -344,11 +345,54 @@ h1, h2, h3, h4, h5, h6 {
       transform: translateY(0px);
   }
 }
+/* Update your animation to work both ways */
+@keyframes highlight {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0;
+  }
+}
 
+mark {
+  background: linear-gradient(
+    to right,
+    rgba(252, 211, 77, 0.5) 50%,
+    rgba(252, 211, 77, 0) 50%
+  );
+  background-position: 100%;
+  background-size: 200% 100%;
+  border-radius: 0.125rem;
+  padding-inline: 0.125rem;
+  font-style: normal;
+  color: inherit;
+  transition: background-position 0.5s ease-out; /* Add transition for smooth unhighlighting */
+}
+
+/* CSS View Timeline (modern browsers) */
+@supports (animation-timeline: view()) {
+  mark {
+    animation: highlight linear forwards;
+    animation-timeline: view();
+    animation-range: entry 30% cover 70%;
+  }
+}
+/* Fallback class for JS (older browsers) */
+mark.js-highlight {
+  animation: highlight 1s linear forwards;
+  background-position: 0; /* Highlighted state */
+}
+
+/* When js-highlight is removed, return to original state */
+mark:not(.js-highlight) {
+  background-position: 100%; /* Unhighlighted state */
+}
 /* Section Cursus */
 #cursus {
   padding: 4rem 2rem;
   background: #EDF1D6;
+  /* Keep text-align: center for the timeline components */
   text-align: center;
   min-height: 200vh;
   position: relative;
@@ -358,10 +402,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .cursus-heading {
   margin-bottom: 2rem;
-  color: #424242;
+  color: #2E7D32;
   font-size: 2.5rem;
+  /* Change to left alignment to match "Recherche de stage" */
+  text-align: left;
+  /* Add left margin to match content-text padding */
+  margin-left: 7rem;
 }
 
+.cursus-description {
+  margin-bottom: 2rem;
+  color: #424242;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: left;
+  /* Add left margin to match content-text padding */
+  margin-left: 7rem;
+}
 #timeline-container {
   position: relative;
   width: 100%;
@@ -433,19 +490,31 @@ h1, h2, h3, h4, h5, h6 {
   transition: visibility 0s 0s;
 }
 
+/* Style pour les bullet points en forme de flèche dans la timeline */
+.timeline-item p {
+  position: relative;
+  padding-left: 1.5rem;
+  text-align: left;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-item p::before {
+  content: "➤";  /* Flèche Unicode */
+  position: absolute;
+  left: 0;
+  color: #4CAF50; /* Couleur verte qui s'accorde avec votre thème */
+  font-size: 0.9rem;
+}
+
+/* Pour assurer que le titre de l'établissement reste centré */
 .timeline-item .year {
   display: block;
-  font-size: 1.8rem;
+  text-align: center;
   font-weight: bold;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #2E7D32; /* Forest Green */
+  color: #EDF1D6;
 }
-
-.timeline-item p {
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
 /* Navigation Dots Timeline */
 .dots-timeline {
   position: fixed;
