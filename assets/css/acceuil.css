@@ -5,13 +5,20 @@
   box-sizing: border-box;
 }
 
+/* Polices : Utilisez 'Inter' pour le corps et 'Montserrat' pour les titres */
+/* N'oubliez pas d'inclure les liens vers Google Fonts dans votre HTML */
 body {
-  font-family: Arial, sans-serif;
-  color: #333;
+  font-family: 'Inter', sans-serif;
+  color: #424242; /* Charcoal Grey */
   overflow-x: hidden;
+  background-color: #EDF1D6; /* Ivory White */
 }
 
-/* Hero/Intro Section */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Section Hero/Intro */
 .intro {
   position: relative;
   overflow: hidden;
@@ -30,7 +37,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../images/hue_background.png") center/cover no-repeat;
+  background:radial-gradient(circle,#F1F0E9  0%,  #0D4715 80%) center/cover no-repeat;
   filter: blur(5px);
   z-index: 0;
 }
@@ -40,21 +47,21 @@ body {
 .intro .scroll-down {
   position: relative;
   z-index: 1;
-  color: #4d3737;
+  color: #0D4715;
 }
 
 .intro h1 {
   font-size: 4rem;
-  margin-bottom: 0.02rem;
+  margin-bottom: 0.5rem;
 }
 
 .intro p {
   font-size: 1.5rem;
   max-width: 700px;
-  margin: 0 auto 0.02rem auto;
+  margin: 0 auto 0.5rem auto;
 }
 
-/* Scroll Animations */
+/* Animations de défilement */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   40% { transform: translateY(-10px); }
@@ -66,24 +73,45 @@ body {
   50% { transform: translateX(-5px); }
 }
 
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+
+
 .scroll-down a {
   font-size: 2rem;
-  color: #fff;
+  color: #1565C0; /* Ocean Blue */
   text-decoration: none;
   animation: bounce 2s infinite;
 }
 
 .scroll-down a:hover {
-  color: #8f8f8f;
+  color: #2E7D32; /* Forest Green */
   transform: scale(1.2);
   animation: hover-bounce 0.5s infinite;
-  text-shadow: 0 5px 8px rgba(0, 0, 0, 0.5); 
+  text-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Content Section */
+/* Section Content */
 #content {
   padding: 4rem 2rem;
-  background: #413535;
+  background: #EDF1D6; /* Ivory White */
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -93,13 +121,13 @@ body {
 }
 
 #content h2 {
-  color: #fff;
+  color: #2E7D32; /* Forest Green */
   margin-bottom: 2rem;
   font-size: 2.5rem;
 }
 
 #content p {
-  color: #ddd;
+  color: #424242;
   max-width: 800px;
   margin: 0 auto 2rem;
   font-size: 1.2rem;
@@ -109,14 +137,15 @@ body {
 #content img {
   max-width: 300px;
   border-radius: 50%;
-  border: 4px solid #fff;
+  border: 4px solid #2E7D32; /* Forest Green */
 }
 
+/* Section Cursus */
 #cursus {
   padding: 4rem 2rem;
-  background: #f9f9f9;
+  background: #EDF1D6;
   text-align: center;
-  min-height: 200vh; /* Increased height to allow for scrolling */
+  min-height: 200vh;
   position: relative;
   z-index: 1;
   overflow: visible;
@@ -124,7 +153,7 @@ body {
 
 .cursus-heading {
   margin-bottom: 2rem;
-  color: #333;
+  color: #424242;
   font-size: 2.5rem;
 }
 
@@ -134,83 +163,77 @@ body {
   max-width: 100%;
   margin: 0 auto;
   padding: 2rem 0;
-  min-height: 180vh; /* Taller to allow for more scrolling */
+  min-height: 180vh;
   overflow: visible;
 }
 
-/* Timeline Layout */
+/* Disposition Timeline */
 #timeline {
   position: relative;
   width: 100%;
   height: auto;
   padding: 0;
-  display: block; /* Changed from flex to allow sticky positioning */
+  display: block;
 }
 
-/* Individual timeline item containers */
+/* Conteneurs d'éléments Timeline */
 .timeline-item-container {
   position: relative;
-  height: 70vh; /* Height of each item section */
-  margin-bottom: 50vh; /* Space between items */
+  height: 70vh;
+  margin-bottom: 50vh;
 }
 
-/* Spacers to create vertical distance */
 .timeline-spacer {
-  height: 50vh; /* Adjust this value to create more space between items */
+  height: 50vh;
   width: 100%;
 }
 
-
-/* Timeline Items - Sticky Layout */
-/* Timeline Items - Sticky Layout */
+/* Items Timeline - Layout Sticky */
 .timeline-item {
   position: sticky;
-  top: 20vh; /* Stick to this position from viewport top */
+  top: 20vh;
   width: 20%;
-  height: 50vh; /* Height of each item */
-  margin: 0 auto; /* Center the item horizontally */
+  height: 50vh;
+  margin: 0 auto;
   padding: 2rem;
-  background: #070606;
-  color: white;
+  background: #40513B; /* Ocean Blue */
+  color: #EDF1D6;
   border-radius: 8px;
   opacity: 0;
-  transform: scale(0.9); /* Only scale, no translation */
-  transition: 
-    visibility 0s 0s;
+  transform: scale(0.9);
+  transition: visibility 0s 0s;
   text-align: left;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   z-index: 2;
   visibility: hidden;
 }
 
-
-/* Positioning for each item - adjust these values to create more distance */
 .timeline-item[data-index="0"] {
-  left: 10%; /* Position from left (was 20%) */
+  left: 10%;
 }
 
 .timeline-item[data-index="1"] {
-  left: 40%; /* Position from left (was 40%) */
+  left: 40%;
 }
 
 .timeline-item[data-index="2"] {
-  left: 70%; /* Position from left (was 60%) */
+  left: 70%;
 }
 
 .timeline-item.active {
   opacity: 1;
   visibility: visible;
   position: fixed;
-  transform: scale(1); /* Only scale up, no translation */
-  transition: 
-    visibility 0s 0s;
+  transform: scale(1);
+  transition: visibility 0s 0s;
 }
+
 .timeline-item .year {
   display: block;
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #4e98db;
+  color: #2E7D32; /* Forest Green */
 }
 
 .timeline-item p {
@@ -218,7 +241,7 @@ body {
   font-size: 1.1rem;
 }
 
-/* Dots Timeline (Navigation) */
+/* Navigation Dots Timeline */
 .dots-timeline {
   position: fixed;
   bottom: 40px;
@@ -242,7 +265,7 @@ body {
   align-items: center;
   width: 300px;
   position: relative;
-  background: rgba(255,255,255,0.8);
+  background: rgba(248, 249, 250, 0.8); /* Ivory White avec transparence */
   border-radius: 30px;
   padding: 15px 30px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -253,7 +276,7 @@ body {
   position: absolute;
   width: calc(100% - 60px);
   height: 3px;
-  background-color: #AEB6BF;
+  background-color: #EDF1D6; /* Mint Green */
   z-index: 0;
 }
 
@@ -261,25 +284,25 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #AEB6BF;
+  background-color: #424242; /* Charcoal Grey */
   margin: 0;
   transition: all 0.7s ease;
   transform: scale(1);
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 0 4px rgba(174, 182, 191, 0.2);
+  box-shadow: 0 0 0 4px rgba(66, 66, 66, 0.2);
 }
 
 .dot.active {
-  background-color: #2C3E50;
+  background-color: #2E7D32; /* Forest Green */
   transform: scale(1.3);
-  box-shadow: 0 0 0 4px rgba(44, 62, 80, 0.3);
+  box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.3);
 }
 
 .dot-connection {
   flex-grow: 1;
   height: 3px;
-  background-color: #AEB6BF;
+  background-color: #A5D6A7; /* Mint Green */
   transition: background-color 0.7s ease, transform 0.5s ease;
   transform: scaleX(1);
   transform-origin: left;
@@ -287,12 +310,12 @@ body {
 }
 
 .dot-connection.active {
-  background-color: #2C3E50;
+  background-color: #2E7D32; /* Forest Green */
 }
 
-/* White Section */
+/* Section Projets */
 .projects {
-  background-color: #fff;
+  background-color: #F8F9FA; /* Ivory White */
   min-height: 200vh;
   display: flex;
   flex-direction: column;
@@ -303,15 +326,15 @@ body {
 .projects h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #333;
+  color: #424242;
 }
 
-/* Header Placeholder */
+/* Placeholder Header */
 #header-placeholder {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: #fff;
+  background: #40513B; /* Ivory White */
   border-top: 1px solid #ccc;
   text-align: center;
   transition: all 0.3s ease;
@@ -327,12 +350,13 @@ body {
 
 /* Footer */
 footer {
-  background: #222;
-  color: #fff;
+  background: #424242; /* Charcoal Grey */
+  color: #F8F9FA; /* Ivory White */
   text-align: center;
   padding: 2rem;
 }
 
+/* Slider et Carousel */
 .slider {
   position: relative;
   width: 100vw;
@@ -349,7 +373,7 @@ footer {
   width: 300px;
   height: 300px;
   text-align: justify;
-  background-color: #fff;
+  background-color: #F8F9FA; /* Ivory White */
   border-radius: 10px;
   padding: 20px;
   transition: 0.5s;
@@ -358,16 +382,16 @@ footer {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  will-change: transform opacity;
+  will-change: transform, opacity;
 }
 
 #next, #prev {
   position: absolute;
   top: 40%;
-  color: #fff;
+  color: #F8F9FA;
   background-color: rgba(0,0,0,0.3);
   border: none;
-  font-size: xxx-large;
+  font-size: 2rem;
   font-family: monospace;
   font-weight: bold;
   cursor: pointer;
@@ -388,7 +412,6 @@ footer {
   right: 20px;
 }
 
-/* Hover effects for buttons */
 #next:hover, #prev:hover {
   background-color: rgba(0,0,0,0.6);
   transform: scale(1.1);

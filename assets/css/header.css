@@ -5,21 +5,33 @@ body {
   }
   
   header {
-    background-color: #f4f4f4;
+    background-color: #40513B;
     width: 100%;
     height: 100px;
     margin: 0 auto;
   }
 
+  .header-placeholder {
+    width: 100%;
+    height: 100px;
+    background-color: #40513B;
+  }
+
   .header-container {
     width: 100%;
     height: 100px;
-    
   }
+
+.header-bar h1,
+.header-bar nav,
+.header-bar .contact-button {
+  margin: 0;
+  padding: 0;
+}
   
   header h1 {
-    margin: 0;
     font-size: 2rem;
+    color: #9DC08B;
   }
 
 
@@ -38,11 +50,11 @@ body {
   
   nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #EDF1D6;
   }
   
   nav ul li a:hover {
-    color: #007BFF;
+    color: #35516e;
   }
   
 
@@ -68,13 +80,13 @@ body {
   
   .primary-navigation a {
     text-decoration: none;
-    color: black;
+    color: #EDF1D6;
     display: block;
     padding: 10px 0;
   }
   
   .primary-navigation a:hover {
-    color: #3ca0e7;
+    color: #9DC08B;
   }
   
   /* Dropdown styling */
@@ -85,7 +97,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    background: white;
+    background: #609966;
     box-shadow: 0px 3px 5px -1px #ccc;
     padding-top: 20px;
     min-width: 200px;
@@ -105,7 +117,7 @@ body {
   
   .primary-navigation ul li ul.dropdown li a:hover {
     padding-left: 10px;
-    border-left: 2px solid #3ca0e7;
+    border-left: 2px solid #40513B;
     transition: all 0.3s ease;
   }
   
@@ -115,15 +127,22 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    padding-top: 1.5rem;
     margin: 0 auto;
+    background-color: #40513B;
   }
   
   .contact-button {
-    background-color: darkgreen;
+    background-color: #e99b26;
     color: #333;
-    padding: 10px 20px;
+    height: 2rem;
+    width: 8rem;
+    text-align: center;
+    justify-content: center;
     border-radius: 8px;
     text-decoration: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
   }
   
   .contact-button:hover {
