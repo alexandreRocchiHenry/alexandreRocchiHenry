@@ -129,20 +129,50 @@ body {
     margin: 0 auto;
     background-color: #40513B;
   }
-  
-  .contact-button {
-    background-color: #e99b26;
-    color: #333;
-    height: 2rem;
-    width: 8rem;
-    text-align: center;
-    justify-content: center;
-    border-radius: 8px;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-  }
-  
-  .contact-button:hover {
-    background-color: #228B22; /* Slightly lighter green */
-  }
+  .btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #f57a28;
+  color: #EDF1D6;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color: #cf6721;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
