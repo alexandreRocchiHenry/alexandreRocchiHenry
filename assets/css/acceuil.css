@@ -417,10 +417,9 @@ mark:not(.js-highlight) {
   top: 0;
   background: rgba(237, 241, 214, 0.95);
   width: 100%;
-  transition: transform 1s ease;
-  transform: translateY(-6rem);
+  transition: transform 0.5s ease;
+  transform: translateY(-3rem);
   pointer-events: none;
-  z-index: 100;
 }
 
 /* When active class is applied - improve sticky behavior */
