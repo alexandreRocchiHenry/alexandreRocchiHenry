@@ -408,9 +408,54 @@ mark:not(.js-highlight) {
   text-align: left;
   /* Add left margin to match content-text padding */
   margin-left: 7rem;
+}/* Replace the current .cursus-header styles with this simplified approach */
+
+
+/* Update the cursus header to improve transition */
+.cursus-header {
+  position: relative;
+  top: 0;
+  background: rgba(237, 241, 214, 0.95);
+  width: 100%;
+  transition: transform 1s ease;
+  transform: translateY(-6rem);
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* When active class is applied - improve sticky behavior */
+.cursus-header.active {
+  position: sticky;
+  top: 0; /* Ensure it sticks to top */
+  transform: translateY(0);
+  pointer-events: all;
+  padding-top: 6rem;
+}
+
+/* ...existing code... */
+/* Styling for heading and description */
+.cursus-heading {
+  margin-bottom: 1rem;
+  color: #2E7D32;
+  font-size: 2.5rem;
+  text-align: left;
+  margin-left: 7rem;
 }
 
 .cursus-description {
+  color: #424242;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: left;
+  margin-left: 7rem;
+  margin-bottom: 1rem;
+}
+
+/* Make sure the headings and description remain visible */
+.cursus-heading, .cursus-description {
+  position: relative;
+  z-index: 1;
+}.cursus-description {
   margin-bottom: 2rem;
   color: #424242;
   font-size: 1.2rem;
@@ -458,6 +503,7 @@ mark:not(.js-highlight) {
   height: 50vh;
   margin: 0 auto;
   padding: 2rem;
+  margin-top: 5rem;
   background: #40513B; /* Ocean Blue */
   color: #EDF1D6;
   border-radius: 8px;
@@ -527,6 +573,7 @@ mark:not(.js-highlight) {
   opacity: 0;
   transition: opacity 0.6s ease, transform 0.4s ease;
   pointer-events: none;
+
 }
 
 .dots-timeline.visible {

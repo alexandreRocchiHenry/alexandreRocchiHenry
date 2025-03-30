@@ -58,9 +58,10 @@
 </section>
 
     <section id="cursus">
-      <h2 class="cursus-heading">Mon Cursus</h2>
-      <p class="cursus-description">Voici une frise chronologique retraçant les différents établissements français où j'ai suivi une formation en mathématiques, informatique et intelligence artificielle.</p>
-      
+      <div class="cursus-header">
+        <h2 class="cursus-heading">Mon Cursus</h2>
+        <p class="cursus-description">Voici une frise chronologique retraçant les différents établissements français où j'ai suivi une formation en mathématiques, informatique et intelligence artificielle.</p>
+      </div>
       <!-- Horizontal Timeline Container -->
       <div id="timeline-container">
         <div id="timeline">
@@ -228,39 +229,57 @@
     const debug = false;
     
     function updateTimeline() {
-      const scrollPosition = window.scrollY;
-      
-      // Get section positions
-      const cursusSection = document.getElementById('cursus');
-      const cursusSectionTop = cursusSection.offsetTop;
-      const whiteSection = document.querySelector('.projects');
-      const whiteSectionTop = whiteSection.offsetTop;
-      
-      if (debug) {
-        console.clear();
-        console.log('Scroll position:', scrollPosition);
-        console.log('Cursus section top:', cursusSectionTop);
-        console.log('Window height:', window.innerHeight);
-      }
-      
-      // Timeline is visible in the cursus section area (using vh units)
-      const bufferTop = vhToPx(2); // 20vh buffer at top
-      const bufferBottom = vhToPx(105); // 85vh buffer at bottom
-      
-      const inCursusArea = scrollPosition >= (cursusSectionTop - bufferTop) && 
-                           scrollPosition < (whiteSectionTop - bufferBottom);
-      
-      // Handle dots-timeline visibility
-      dotsTimeline.classList.toggle('visible', inCursusArea);
-      
-      // If we're not in cursus area, make sure everything is inactive
-      if (!inCursusArea) {
-        // Remove active class from all items, dots and connections
-        items.forEach(item => item.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        connections.forEach(connection => connection.classList.remove('active'));
-        return; // Exit early
-      }
+  const scrollPosition = window.scrollY;
+  
+  // Get section positions
+  const cursusSection = document.getElementById('cursus');
+  const cursusSectionTop = cursusSection.offsetTop;
+  const whiteSection = document.querySelector('.projects');
+  const whiteSectionTop = whiteSection.offsetTop;
+  
+  // Get the header
+  const cursusHeader = document.querySelector('.cursus-header');
+  
+  // Enable debug temporarily to troubleshoot
+  const debug = true;
+  
+  if (debug) {
+    console.log('Scroll position:', scrollPosition);
+    console.log('Cursus section top:', cursusSectionTop);
+  }
+  
+  // Calculate thresholds - more direct calculation
+  const startThreshold = cursusSectionTop - 50; // Start slightly before section
+  const endThreshold = whiteSectionTop - vhToPx(110);   // End before next section
+  
+  // Check if we're in the cursus area
+  const inCursusArea = scrollPosition >= startThreshold && 
+                       scrollPosition < endThreshold;
+  
+  // Handle dots-timeline visibility
+  dotsTimeline.classList.toggle('visible', inCursusArea);
+  
+  // Handle header visibility and position
+  if (cursusHeader) {
+    cursusHeader.classList.toggle('active', inCursusArea);
+    
+    // Apply fixed positioning when scrolled past the section start
+    const shouldBeFixed = scrollPosition > cursusSectionTop + 100;
+    cursusHeader.classList.toggle('fixed', shouldBeFixed && inCursusArea);
+    
+    if (debug) {
+      console.log('Header should be active:', inCursusArea);
+      console.log('Header should be fixed:', shouldBeFixed && inCursusArea);
+    }
+  }
+  
+  // If we're not in cursus area, make everything inactive
+  if (!inCursusArea) {
+    items.forEach(item => item.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    connections.forEach(connection => connection.classList.remove('active'));
+    return; // Exit early
+  }
       
       // If we're in the cursus area, process items and dots
       
