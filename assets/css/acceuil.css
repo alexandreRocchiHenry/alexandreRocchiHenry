@@ -1,24 +1,27 @@
-/* Basic Reset */
+/* ------------------
+   Reset & Base
+------------------ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Polices : Utilisez 'Inter' pour le corps et 'Montserrat' pour les titres */
-/* N'oubliez pas d'inclure les liens vers Google Fonts dans votre HTML */
+/* Typo */
 body {
   font-family: 'Inter', sans-serif;
-  color: #424242; /* Charcoal Grey */
+  color: #424242; 
   overflow-x: hidden;
-  background-color: #EDF1D6; /* Ivory White */
+  background-color: #EDF1D6; /* Couleur principale */
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Section Hero/Intro */
+/* ------------------
+   Section Intro
+------------------ */
 .intro {
   position: relative;
   overflow: hidden;
@@ -33,26 +36,29 @@ h1, h2, h3, h4, h5, h6 {
 .intro::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-color: #EDF1D6;
   filter: blur(5px);
   z-index: 0;
 }
 
-/* Animated Gradient Text Effect */
+
+.intro h1,
+.intro h2,
+.intro p,
+.intro .arrow {
+  position: relative;
+  z-index: 1;
+  /* On ajoute la couleur ci-dessous comme fallback */
+  color: #0D4715; /* ou la couleur de ton choix */
+}
+
+
 @keyframes textGradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .intro h1 {
@@ -64,7 +70,6 @@ h1, h2, h3, h4, h5, h6 {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textGradientAnimation 10s ease infinite;
-  text-shadow: none;
 }
 
 .intro h2 {
@@ -80,7 +85,6 @@ h1, h2, h3, h4, h5, h6 {
   animation-delay: 0.5s;
   font-weight: 600;
 }
-
 
 .intro p {
   font-size: 2rem;
@@ -102,17 +106,8 @@ h1, h2, h3, h4, h5, h6 {
   transform: rotate(270deg);
 }
 
-.intro h1,
-.intro h2,
-.intro p,
-.intro .arrow {
-  position: relative;
-  z-index: 1;
-  color: #0D4715;
-}
-
 .arrow span {
-  width: 1rem;
+  width: 1rem; 
   height: 1rem;
   border-bottom: 4px solid #609966;
   border-right: 4px solid #609966;
@@ -140,109 +135,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wave {
-  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.5s;        /* Change to speed up or slow down */
-  animation-iteration-count: infinite;  /* Never stop waving :) */
-  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
   display: inline-block;
 }
 
 @keyframes wave-animation {
-    0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
-   20% { transform: rotate(-8.0deg) }
-   30% { transform: rotate(14.0deg) }
-   40% { transform: rotate(-4.0deg) }
-   50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
-  100% { transform: rotate( 0.0deg) }
+  0% { transform: rotate(0.0deg) }
+  10% { transform: rotate(14.0deg) }
+  20% { transform: rotate(-8.0deg) }
+  30% { transform: rotate(14.0deg) }
+  40% { transform: rotate(-4.0deg) }
+  50% { transform: rotate(10.0deg) }
+  60% { transform: rotate(0.0deg) }
+  100% { transform: rotate(0.0deg) }
 }
 
-/* Card container */
-.profile-card {
-  position: relative;
-  height: 250px;
-  width: 250px;
-  background-color: #EDF1D6; /* Ivory White */
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  padding: 2rem 1rem;
-  text-align: center;
-  margin: 2rem auto;
-  overflow: visible;
-}
-
-/* Card container - scale up by 1.5x */
-.profile-card {
-  position: relative;
-  height: 375px;  /* 250px x 1.5 */
-  width: 375px;   /* 250px x 1.5 */
-  background-color: #EDF1D6;
-  border-radius: 30px; /* 20px x 1.5 */
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
-  padding: 3rem 1.5rem;
-  text-align: center;
-  margin: 3rem auto;
-  overflow: visible;
-}
-
-/* Green ellipse - scale up by 1.5x */
-.profile-card .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(15deg);
-  width: 420px;  /* 280px x 1.5 */
-  height: 300px; /* 200px x 1.5 */
-  background-color: transparent;
-  border: 6px solid #2E7D32; /* 4px x 1.5 */
-  border-radius: 50%;
-  z-index: 0;
-}
-
-/* Profile photo - scale up by 1.5x */
-.profile-photo {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 450px;  /* 300px x 1.5 */
-  height: 600px; /* 400px x 1.5 */
-  object-fit: cover;
-  z-index: 1;
-  border: none;
-  transform: translateX(-50%);
-}
-
-
-
-.scroll-down a {
-  font-size: 2rem;
-  color: #1565C0; /* Ocean Blue */
-  text-decoration: none;
-  animation: bounce 2s infinite;
-}
-
-.scroll-down a:hover {
-  color: #2E7D32; /* Forest Green */
-  transform: scale(1.2);
-  animation: hover-bounce 0.5s infinite;
-  text-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Section Content avec mise en page en deux colonnes */
+/* ------------------
+   Section Content
+------------------ */
 #content {
   padding: 4rem 2rem;
   padding-top: 10rem;
-  background: #EDF1D6; /* Ivory White */
+  background: #EDF1D6;
   min-height: 85vh;
   display: flex;
-  flex-direction: row; /* Disposition horizontale */
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-/* Colonne de gauche pour le texte */
 .content-text {
   flex: 1;
   padding-right: 2rem;
@@ -251,7 +176,6 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 50%;
 }
 
-/* Colonne de droite pour la carte et la photo */
 .content-card {
   flex: 1;
   display: flex;
@@ -259,8 +183,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
+/* Titres & paragraphes */
 #content h2 {
-  color: #2E7D32; /* Forest Green */
+  color: #2E7D32;
   margin-bottom: 2rem;
   font-size: 2.5rem;
   text-align: left;
@@ -274,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
-
+/* Bouton CV */
 .text-box {
   margin-left: 0;
   margin-top: 2rem;
@@ -290,6 +215,8 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 100px;
   transition: all .2s;
   position: relative;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .btn:hover {
@@ -314,8 +241,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   border-radius: 100px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   z-index: -1;
   transition: all .4s;
 }
@@ -329,48 +255,19 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-.btn-animated {
-  animation: moveInBottom 5s ease-out;
-  animation-fill-mode: backwards;
-}
-
-@keyframes moveInBottom {
-  0% {
-      opacity: 0;
-      transform: translateY(30px);
-  }
-
-  100% {
-      opacity: 1;
-      transform: translateY(0px);
-  }
-}
-/* Update your animation to work both ways */
-@keyframes highlight {
-  0% {
-    background-position: 100%;
-  }
-  100% {
-    background-position: 0;
-  }
-}
-
+/* Mark highlight */
 mark {
-  background: linear-gradient(
-    to right,
+  background: linear-gradient(to right,
     rgba(252, 211, 77, 0.5) 50%,
-    rgba(252, 211, 77, 0) 50%
-  );
+    rgba(252, 211, 77, 0) 50%);
   background-position: 100%;
   background-size: 200% 100%;
   border-radius: 0.125rem;
   padding-inline: 0.125rem;
-  font-style: normal;
   color: inherit;
-  transition: background-position 0.5s ease-out; /* Add transition for smooth unhighlighting */
+  transition: background-position 0.5s ease-out;
 }
 
-/* CSS View Timeline (modern browsers) */
 @supports (animation-timeline: view()) {
   mark {
     animation: highlight linear forwards;
@@ -378,40 +275,65 @@ mark {
     animation-range: entry 30% cover 70%;
   }
 }
-/* Fallback class for JS (older browsers) */
+
 mark.js-highlight {
   animation: highlight 1s linear forwards;
-  background-position: 0; /* Highlighted state */
+  background-position: 0; 
 }
 
-/* When js-highlight is removed, return to original state */
-mark:not(.js-highlight) {
-  background-position: 100%; /* Unhighlighted state */
+/* ------------------
+   Card - Photo
+------------------ */
+.profile-card {
+  position: relative;
+  height: 375px; 
+  width: 375px; 
+  background-color: #EDF1D6;
+  border-radius: 30px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  margin: 3rem auto;
+  overflow: visible;
 }
-/* Section Cursus */
+
+.profile-card .circle {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(15deg);
+  width: 420px;
+  height: 300px;
+  background-color: transparent;
+  border: 6px solid #2E7D32;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.profile-photo {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 450px;
+  height: 600px;
+  object-fit: cover;
+  z-index: 1;
+  border: none;
+  transform: translateX(-50%);
+}
+
+/* ------------------
+   Section Cursus
+------------------ */
 #cursus {
   padding: 4rem 2rem;
   background: #EDF1D6;
-  /* Keep text-align: center for the timeline components */
-  text-align: center;
   min-height: 200vh;
   position: relative;
   z-index: 1;
   overflow: visible;
+  text-align: center;
 }
 
-.cursus-heading {
-  margin-bottom: 2rem;
-  color: #2E7D32;
-  font-size: 2.5rem;
-  /* Change to left alignment to match "Recherche de stage" */
-  text-align: left;
-  /* Add left margin to match content-text padding */
-  margin-left: 7rem;
-}/* Replace the current .cursus-header styles with this simplified approach */
-
-
-/* Update the cursus header to improve transition */
 .cursus-header {
   position: relative;
   top: 0;
@@ -422,17 +344,14 @@ mark:not(.js-highlight) {
   pointer-events: none;
 }
 
-/* When active class is applied - improve sticky behavior */
 .cursus-header.active {
   position: sticky;
-  top: 0; /* Ensure it sticks to top */
+  top: 0;
   transform: translateY(0);
   pointer-events: all;
   padding-top: 6rem;
 }
 
-/* ...existing code... */
-/* Styling for heading and description */
 .cursus-heading {
   margin-bottom: 1rem;
   color: #2E7D32;
@@ -442,27 +361,17 @@ mark:not(.js-highlight) {
 }
 
 .cursus-description {
-  color: #424242;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  text-align: left;
-  margin-left: 7rem;
-  margin-bottom: 1rem;
-}
-
-/* Make sure the headings and description remain visible */
-.cursus-heading, .cursus-description {
-  position: relative;
-  z-index: 1;
-}.cursus-description {
   margin-bottom: 2rem;
   color: #424242;
   font-size: 1.2rem;
   line-height: 1.6;
   text-align: left;
-  /* Add left margin to match content-text padding */
   margin-left: 7rem;
 }
+
+/* ------------------
+   Timeline
+------------------ */
 #timeline-container {
   position: relative;
   width: 100%;
@@ -473,7 +382,6 @@ mark:not(.js-highlight) {
   overflow: visible;
 }
 
-/* Disposition Timeline */
 #timeline {
   position: relative;
   width: 100%;
@@ -482,19 +390,6 @@ mark:not(.js-highlight) {
   display: block;
 }
 
-/* Conteneurs d'éléments Timeline */
-.timeline-item-container {
-  position: relative;
-  height: 70vh;
-  margin-bottom: 50vh;
-}
-
-.timeline-spacer {
-  height: 50vh;
-  width: 100%;
-}
-
-/* Items Timeline - Layout Sticky */
 .timeline-item {
   position: sticky;
   top: 20vh;
@@ -503,7 +398,7 @@ mark:not(.js-highlight) {
   margin: 0 auto;
   padding: 2rem;
   margin-top: 5rem;
-  background: #40513B; /* Ocean Blue */
+  background: #40513B;
   color: #EDF1D6;
   border-radius: 8px;
   opacity: 0;
@@ -515,17 +410,9 @@ mark:not(.js-highlight) {
   visibility: hidden;
 }
 
-.timeline-item[data-index="0"] {
-  left: 10%;
-}
-
-.timeline-item[data-index="1"] {
-  left: 40%;
-}
-
-.timeline-item[data-index="2"] {
-  left: 70%;
-}
+.timeline-item[data-index="0"] { left: 10%; }
+.timeline-item[data-index="1"] { left: 40%; }
+.timeline-item[data-index="2"] { left: 70%; }
 
 .timeline-item.active {
   opacity: 1;
@@ -535,7 +422,6 @@ mark:not(.js-highlight) {
   transition: visibility 0s 0s;
 }
 
-/* Style pour les bullet points en forme de flèche dans la timeline */
 .timeline-item p {
   position: relative;
   padding-left: 1.5rem;
@@ -544,14 +430,13 @@ mark:not(.js-highlight) {
 }
 
 .timeline-item p::before {
-  content: "➤";  /* Flèche Unicode */
+  content: "➤";
   position: absolute;
   left: 0;
-  color: #4CAF50; /* Couleur verte qui s'accorde avec votre thème */
+  color: #4CAF50;
   font-size: 0.9rem;
 }
 
-/* Pour assurer que le titre de l'établissement reste centré */
 .timeline-item .year {
   display: block;
   text-align: center;
@@ -560,7 +445,10 @@ mark:not(.js-highlight) {
   margin-bottom: 1rem;
   color: #EDF1D6;
 }
-/* Navigation Dots Timeline */
+
+/* ------------------
+   Dots Timeline
+------------------ */
 .dots-timeline {
   position: fixed;
   bottom: 40px;
@@ -572,7 +460,6 @@ mark:not(.js-highlight) {
   opacity: 0;
   transition: opacity 0.6s ease, transform 0.4s ease;
   pointer-events: none;
-
 }
 
 .dots-timeline.visible {
@@ -585,7 +472,7 @@ mark:not(.js-highlight) {
   align-items: center;
   width: 300px;
   position: relative;
-  background: rgba(248, 249, 250, 0.8); /* Ivory White avec transparence */
+  background: rgba(248, 249, 250, 0.8);
   border-radius: 30px;
   padding: 15px 30px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -596,7 +483,7 @@ mark:not(.js-highlight) {
   position: absolute;
   width: calc(100% - 60px);
   height: 3px;
-  background-color: #EDF1D6; /* Mint Green */
+  background-color: #EDF1D6;
   z-index: 0;
 }
 
@@ -604,7 +491,7 @@ mark:not(.js-highlight) {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #424242; /* Charcoal Grey */
+  background-color: #424242;
   margin: 0;
   transition: all 0.7s ease;
   transform: scale(1);
@@ -614,7 +501,7 @@ mark:not(.js-highlight) {
 }
 
 .dot.active {
-  background-color: #2E7D32; /* Forest Green */
+  background-color: #2E7D32;
   transform: scale(1.3);
   box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.3);
 }
@@ -622,7 +509,7 @@ mark:not(.js-highlight) {
 .dot-connection {
   flex-grow: 1;
   height: 3px;
-  background-color: #A5D6A7; /* Mint Green */
+  background-color: #A5D6A7;
   transition: background-color 0.7s ease, transform 0.5s ease;
   transform: scaleX(1);
   transform-origin: left;
@@ -630,12 +517,14 @@ mark:not(.js-highlight) {
 }
 
 .dot-connection.active {
-  background-color: #2E7D32; /* Forest Green */
+  background-color: #2E7D32;
 }
 
-/* Section Projets */
+/* ------------------
+   Projets Section
+------------------ */
 .projects {
-  background-color: #A2B29F; /* Ivory White */
+  background-color: #A2B29F;
   min-height: 40vh;
   display: flex;
   flex-direction: column;
@@ -649,12 +538,14 @@ mark:not(.js-highlight) {
   color: #424242;
 }
 
-/* Placeholder Header */
+/* ------------------
+   Header placeholder
+------------------ */
 #header-placeholder {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: #40513B; /* Ivory White */
+  background: #40513B;
   border-top: 1px solid #ccc;
   text-align: center;
   transition: all 0.3s ease;
@@ -668,15 +559,19 @@ mark:not(.js-highlight) {
   left: 0;
 }
 
-/* Footer */
+/* ------------------
+   Footer
+------------------ */
 footer {
-  background: #424242; /* Charcoal Grey */
-  color: #F8F9FA; /* Ivory White */
+  background: #424242;
+  color: #F8F9FA;
   text-align: center;
   padding: 2rem;
 }
 
-/* Slider et Carousel */
+/* ------------------
+   Slider / Carousel
+------------------ */
 .slider {
   position: relative;
   width: 100vw;
@@ -693,7 +588,7 @@ footer {
   width: 300px;
   height: 300px;
   text-align: justify;
-  background-color: #F8EDE3; /* Ivory White */
+  background-color: #F8EDE3;
   border-radius: 10px;
   padding: 20px;
   transition: 0.5s;
@@ -724,21 +619,19 @@ footer {
   z-index: 10;
 }
 
-#prev {
-  left: 20px;
-}
-
-#next {
-  right: 20px;
-}
+#prev { left: 20px; }
+#next { right: 20px; }
 
 #next:hover, #prev:hover {
   background-color: rgba(0,0,0,0.6);
   transform: scale(1.1);
 }
 
+/* ------------------
+   Section Stages
+------------------ */
 .stages {
-  background-color: #F8EDE3; /* Ivory White */
+  background-color: #F8EDE3;
   min-height: 200vh;
   display: flex;
   flex-direction: column;
@@ -750,4 +643,105 @@ footer {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: #424242;
+}
+
+/* -------------------------------------
+   MEDIA QUERIES (Réglages Responsifs)
+-------------------------------------- */
+/* Grand mobile / Tablette (max-width: 992px) */
+@media (max-width: 992px) {
+  .intro h1 {
+    font-size: 5rem;
+  }
+  .intro h2 {
+    font-size: 2rem;
+  }
+  #content {
+    flex-direction: column;
+    padding-top: 5rem;
+  }
+  .content-text {
+    max-width: 100%;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .profile-card {
+    width: 300px;
+    height: 300px;
+  }
+  .profile-card .circle {
+    width: 320px;
+    height: 230px;
+  }
+  .profile-photo {
+    width: 330px;
+    height: 440px;
+  }
+  .timeline-item {
+    width: 60%;
+    left: 20% !important;
+  }
+}
+
+/* Smartphone (max-width: 600px) */
+@media (max-width: 600px) {
+  .intro h1 {
+    font-size: 3.5rem;
+  }
+  .intro h2 {
+    font-size: 1.8rem;
+  }
+  .intro p {
+    font-size: 1.3rem;
+  }
+  #content {
+    padding-top: 3rem;
+  }
+  .content-text {
+    padding: 0 1rem;
+  }
+  .content-card {
+    margin: 2rem 0;
+  }
+  .profile-card {
+    width: 240px;
+    height: 240px;
+    margin: 1rem auto;
+  }
+  .profile-card .circle {
+    width: 250px;
+    height: 170px;
+  }
+  .profile-photo {
+    width: 260px;
+    height: 350px;
+  }
+
+  /* Timeline en une seule colonne (ou simplifiée) */
+  .timeline-item {
+    width: 80%;
+    left: 10% !important;
+    margin-top: 3rem;
+  }
+
+  /* Dots timeline : réduire taille / position */
+  .dots-container {
+    width: 200px;
+    padding: 10px 20px;
+  }
+  .dot {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Carousel : ajuster hauteur */
+  .slider {
+    height: 40vh;
+  }
+  #next, #prev {
+    top: 45%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
 }

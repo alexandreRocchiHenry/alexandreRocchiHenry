@@ -2,382 +2,339 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
+    <!-- Ajout pour la réactivité sur mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Alexandre Rocchi</title>
+    
+    <!-- Liens CSS -->
     <link rel="stylesheet" href="assets/css/acceuil.css">
     <link rel="stylesheet" href="assets/css/header.css">
-    <!-- Add these new links -->
     <link rel="stylesheet" href="assets/css/projects-carousel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
   </head>
-<body>
 
-  <!-- Header placeholder (will be loaded by fetch) -->
-  <div id="header-placeholder"></div>
-  
-  <main>
-    <!-- Hero / Intro Section -->
-    <section class="intro">
-      <p>Salut <span class="wave">👋</span>, je suis</p>
-      <h1>Alexandre Rocchi</h1>
-      <h2>Étudiant en MS IA, à Telecom Paris</h2>
-      <button class="arrow" type="button" onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})" aria-label="Scroll to content">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </section>
+  <body>
+    <!-- Header placeholder (chargé dynamiquement) -->
+    <div id="header-placeholder"></div>
+    
+    <main>
+      <!-- Section Hero / Intro -->
+      <section class="intro">
+        <p>Salut <span class="wave">👋</span>, je suis</p>
+        <h1>Alexandre Rocchi</h1>
+        <h2>Étudiant en MS IA, à Telecom Paris</h2>
+        <button class="arrow" type="button" onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})" aria-label="Scroll to content">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </section>
 
- <!-- Content Section -->
-<section id="content">
-  <div class="content-text">
-    <h2>Recherche de stage</h2>
-    <p>
-      Actuellement entrain de compléter ma formation dans l'intelligence artificielle avec un <mark>Master Spécialisé à Télécom Paris</mark>.
-    </p>
-    <p>
-      Je suis ingénieur diplômé de l'ENSE3 - Grenoble INP en master Automatique et Systèmes Intelligents.
-    </p>
-    <p>
-      J'ai un fort attrait pour les sujets de Computer Vision appliqués à l'environnement et à la santé.
-    </p>
-    <p>
-     je cherche un <mark>stage de 6 mois à partir de juillet 2025</mark>.
-    </p>
-    <div class="text-box">
-      <a href="assets/pdf/ALEXANDRE_ROCCHI_CV__FRENCH_Version__TParis___V2_.pdf" class="btn btn-white btn-animate" download class="btn btn-white btn-        animate">mon CV</a>
-    </div>
-  </div>
-  
-  <div class="content-card">
-    <div class="profile-card">
-      <div class="circle"></div>
-      <img src="assets/images/Alexandre.png" alt="Photo d'Alexandre Rocchi" class="profile-photo">
-    </div>
-  </div>
-</section>
-
-    <section id="cursus">
-      <div class="cursus-header">
-        <h2 class="cursus-heading">Mon Cursus</h2>
-        <p class="cursus-description">Voici une frise chronologique retraçant les différents établissements où j'ai suivi une formation en mathématiques, informatique et intelligence artificielle.</p>
-      </div>
-      <!-- Horizontal Timeline Container -->
-      <div id="timeline-container">
-        <div id="timeline">
-          <!-- Timeline Items -->
-          <div class="timeline-item" data-year="2022" data-index="0">
-            <span class="year">Lycée Masséna</span>
-            <p>Classes préparatoires en Mathématiques, physiques et informatique</p>
-            <p>Projet sur la simulation de l'erosion des plages</p>
-          </div>
-          
-          <div class="timeline-item" data-year="2023" data-index="1">
-            <span class="year">ENSE3 ‑ Grenoble INP</span>
-            <p>Formation en modélisation, simulation et contrôle de divers systèmes complexes et
-              intelligents.</p>
-            <p>Spécialisation sur l’IA et divers langages de programmation.</p> 
-            <p>Sensibilisation aux enjeux du développement durable.</p>
-            <p>cours "AI and Autonomous systems", "Mobile Robotics" et divers cours sur les enjeux environnementaux</p>
-          </div>
-          
-          <div class="timeline-item" data-year="2024" data-index="2">
-            <span class="year">TELECOM PARIS</span>
-            <p>Formation complète sur les divers domaine de l’IA. 
-            <p>Mise en place de divers projets utilisant du Machine Learning et du Deep Learning.</p>
-            <p>Formation pour la vision par ordinateur, les séries temporelles et le NLP.</p>
+      <!-- Section Content -->
+      <section id="content">
+        <div class="content-text">
+          <h2>Recherche de stage</h2>
+          <p>
+            Actuellement entrain de compléter ma formation dans l'intelligence artificielle avec un 
+            <mark>Master Spécialisé à Télécom Paris</mark>.
+          </p>
+          <p>
+            Je suis ingénieur diplômé de l'ENSE3 - Grenoble INP en master Automatique et Systèmes Intelligents.
+          </p>
+          <p>
+            J'ai un fort attrait pour les sujets de Computer Vision appliqués à l'environnement et à la santé.
+          </p>
+          <p>
+            Je cherche un <mark>stage de 6 mois à partir de juillet 2025</mark>.
+          </p>
+          <div class="text-box">
+            <a href="assets/pdf/ALEXANDRE_ROCCHI_CV__FRENCH_Version__TParis___V2_.pdf" class="btn btn-white btn-animate" download>mon CV</a>
           </div>
         </div>
-      </div>
-    </section>
-    
-    <div class="dots-timeline">
-      <div class="dots-container">
-        <!-- First dot -->
-        <div class="dot" data-index="0"></div>
         
-        <!-- Line segment between dots 0 and 1 -->
-        <div class="dot-connection" data-index="0"></div>
-        
-        <!-- Second dot -->
-        <div class="dot" data-index="1"></div>
-        
-        <!-- Line segment between dots 1 and 2 -->
-        <div class="dot-connection" data-index="1"></div>
-        
-        <!-- Third dot -->
-        <div class="dot" data-index="2"></div>
-      </div>
-    </div>
+        <div class="content-card">
+          <div class="profile-card">
+            <div class="circle"></div>
+            <img src="assets/images/Alexandre.png" alt="Photo d'Alexandre Rocchi" class="profile-photo">
+          </div>
+        </div>
+      </section>
 
-  <section class="projects-section projects">
-    <h2>Mes Projets</h2>
-    <div class="slider">
-      <div class="carousel-slide">
-        <h1>Prédictions Energétique</h1>
-        Analyse des données de consommation énergétique et modélisation prédictive pour optimiser l'efficacité énergétique des bâtiments.
-      </div>
-      <div class="carousel-slide">
-        <h1>Projet Kit Big Data</h1>
-        Analyse approfondie des données de Food.com pour identifier les causes de sa baisse de popularité et proposer des axes d'amélioration, en développant une application interactive de visualisation des données.
-      </div>
-      <div class="carousel-slide">
-        <h1>NLP</h1>
-        Développement d'un modèle avancé de clustering automatique de textes sur l'éthique en intelligence artificielle par LDA, BERTopic et GPTopic.
-      </div>
-      <div class="carousel-slide">
-        <h1>Idemia</h1>
-        Analyse et développement de solutions de traduction automatique entre langages de programmation, appliquées à des cas d’usage concrets de projet de reconnaissance faciale.
-      </div>
-      <div class="carousel-slide">
-        <h1>Airbus</h1>
-        Développement d'une méthode non supervisée pour détecter des changements atypiques dans des séries temporelles d'images satellitaires. Utilisation de modèles de fondation visuels et de techniques de segmentation sémantique multiclasse.
-      </div>
-      <div class="carousel-slide">
-        <h1>Projet Computer Vision</h1>
-        Développement d'un modèle de segmentation d'images satellitaires multispectrales, intégrant des techniques avancées de vision par ordinateur et d'apprentissage profond.
-      </div>
-      <div class="carousel-slide">
-        <h1>Serie Temporelles</h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni magnam unde ipsam repudiandae explicabo.
-      </div>
-      <div class="carousel-slide">
-        <h1>Classification Espèces</h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni magnam unde ipsam repudiandae explicabo.
-      </div>
-      <button id="next">></button>
-      <button id="prev"><</button>
-    </div>
-  </section>
-  <section class="stages">
-    <h2>Mes Stages</h2>
-  </section>
-</main>
+      <!-- Section Cursus -->
+      <section id="cursus">
+        <div class="cursus-header">
+          <h2 class="cursus-heading">Mon Cursus</h2>
+          <p class="cursus-description">
+            Voici une frise chronologique retraçant les différents établissements où j'ai suivi une formation en mathématiques, informatique et intelligence artificielle.
+          </p>
+        </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Alexandre Rocchi. Tous droits réservés.</p>
-  </footer>
+        <!-- Conteneur timeline -->
+        <div id="timeline-container">
+          <div id="timeline">
+            <!-- Éléments de la timeline -->
+            <div class="timeline-item" data-year="2022" data-index="0">
+              <span class="year">Lycée Masséna</span>
+              <p>Classes préparatoires en Mathématiques, physiques et informatique</p>
+              <p>Projet sur la simulation de l'erosion des plages</p>
+            </div>
+            
+            <div class="timeline-item" data-year="2023" data-index="1">
+              <span class="year">ENSE3 ‑ Grenoble INP</span>
+              <p>Formation en modélisation, simulation et contrôle de systèmes complexes et intelligents.</p>
+              <p>Spécialisation IA et divers langages de programmation.</p> 
+              <p>Sensibilisation aux enjeux du développement durable.</p>
+              <p>cours "AI and Autonomous systems", "Mobile Robotics", etc.</p>
+            </div>
+            
+            <div class="timeline-item" data-year="2024" data-index="2">
+              <span class="year">TELECOM PARIS</span>
+              <p>Formation complète sur les divers domaines de l’IA.</p>
+              <p>Mise en place de projets en Machine Learning et Deep Learning.</p>
+              <p>Formation en vision par ordinateur, séries temporelles et NLP.</p>
+            </div>
+          </div>
+        </div>
 
-  <!-- Scripts -->
-  <script>
-    // Load the external header file into the placeholder
-    fetch('assets/html/header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
+        <div class="dots-timeline">
+          <div class="dots-container">
+            <div class="dot" data-index="0"></div>
+            <div class="dot-connection" data-index="0"></div>
+            <div class="dot" data-index="1"></div>
+            <div class="dot-connection" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Projets -->
+      <section class="projects-section projects">
+        <h2>Mes Projets</h2>
+        <div class="slider">
+          <div class="carousel-slide">
+            <h1>Prédictions Energétique</h1>
+            Analyse des données de consommation énergétique et modélisation prédictive pour optimiser l'efficacité énergétique des bâtiments.
+          </div>
+          <div class="carousel-slide">
+            <h1>Projet Kit Big Data</h1>
+            Analyse approfondie des données de Food.com pour identifier les causes de baisse de popularité et proposer des axes d'amélioration.
+          </div>
+          <div class="carousel-slide">
+            <h1>NLP</h1>
+            Modèle avancé de clustering automatique de textes sur l'éthique en IA (LDA, BERTopic et GPTopic).
+          </div>
+          <div class="carousel-slide">
+            <h1>Idemia</h1>
+            Solutions de traduction automatique entre langages de programmation pour un projet de reconnaissance faciale.
+          </div>
+          <div class="carousel-slide">
+            <h1>Airbus</h1>
+            Détection de changements atypiques dans des séries temporelles d'images satellitaires (modèles de fondation visuels, segmentation sémantique).
+          </div>
+          <div class="carousel-slide">
+            <h1>Projet Computer Vision</h1>
+            Segmentation d'images satellitaires multispectrales avec des techniques avancées de vision par ordinateur.
+          </div>
+          <div class="carousel-slide">
+            <h1>Série Temporelles</h1>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni magnam unde ipsam repudiandae explicabo.
+          </div>
+          <div class="carousel-slide">
+            <h1>Classification Espèces</h1>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni magnam unde ipsam repudiandae explicabo.
+          </div>
+          <button id="next">></button>
+          <button id="prev"><</button>
+        </div>
+      </section>
+
+      <section class="stages">
+        <h2>Mes Stages</h2>
+        <!-- Contenu à ajouter -->
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Alexandre Rocchi. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Chargement de l'entête (header) externe
+      fetch('assets/html/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        });
+
+      // Rendre le header sticky lors du scroll
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('header-placeholder');
+        if (window.scrollY > window.innerHeight - 50) {
+          header.classList.add('sticky');
+        } else {
+          header.classList.remove('sticky');
+        }
       });
+    </script>
 
-    // Make the header sticky on scroll
-    window.addEventListener('scroll', function() {
-      const header = document.getElementById('header-placeholder');
-      // Trigger stickiness once we scroll beyond a certain threshold
-      if (window.scrollY > window.innerHeight - 50) {
-        header.classList.add('sticky');
-      } else {
-        header.classList.remove('sticky');
-      }
-    });
-  </script>
-  
-  <script>
-    // Feature detection - check if browser supports CSS view() timeline
-    const supportsViewTimeline = CSS.supports('animation-timeline: view()');
-    
-    // Only use JS fallback if browser doesn't support view() timeline
-    if (!supportsViewTimeline) {
-      document.addEventListener('DOMContentLoaded', function() {
-        const markedElements = document.querySelectorAll('mark');
-        
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              // Add the highlight class when element is in view
-              entry.target.classList.add('js-highlight');
-            } else {
-              // Remove the highlight class when element is out of view
-              entry.target.classList.remove('js-highlight');
-            }
+    <script>
+      // Vérifie la prise en charge de CSS view-timeline
+      const supportsViewTimeline = CSS.supports('animation-timeline: view()');
+      
+      // Fallback JS si le navigateur ne supporte pas view-timeline
+      if (!supportsViewTimeline) {
+        document.addEventListener('DOMContentLoaded', function() {
+          const markedElements = document.querySelectorAll('mark');
+          
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('js-highlight');
+              } else {
+                entry.target.classList.remove('js-highlight');
+              }
+            });
+          }, {
+            threshold: 0.3,
+            rootMargin: '-100px 0px -100px 0px'
           });
-        }, {
-          threshold: 0.3,  // Trigger when at least 30% of element is visible
-          rootMargin: '-100px 0px -100px 0px'  // Only highlight in middle section of viewport
+          
+          markedElements.forEach(mark => {
+            observer.observe(mark);
+          });
         });
+      }
+    </script>
+
+    <script>
+      // Timeline animation
+      const items = document.querySelectorAll('.timeline-item');
+      const dots = document.querySelectorAll('.dot');
+      const connections = document.querySelectorAll('.dot-connection');
+      const dotsTimeline = document.querySelector('.dots-timeline');
+      const timeline = document.getElementById('timeline');
+      
+      function vhToPx(vh) {
+        return (vh * window.innerHeight) / 100;
+      }
+
+      // Offsets en unités vh (pour un défilement plus flexible)
+      const itemOffsetsVh = [-3, 30, 60];
+      const dotOffsetsVh = [0, 30, 60];
+
+      function updateTimeline() {
+        const scrollPosition = window.scrollY;
         
-        // Observe all marked elements
-        markedElements.forEach(mark => {
-          observer.observe(mark);
+        const cursusSection = document.getElementById('cursus');
+        const whiteSection = document.querySelector('.projects');
+        
+        const cursusSectionTop = cursusSection.offsetTop;
+        const whiteSectionTop = whiteSection.offsetTop;
+        const cursusHeader = document.querySelector('.cursus-header');
+
+        // Seuils
+        const startThreshold = cursusSectionTop - 50;
+        const endThreshold = whiteSectionTop - vhToPx(110);
+
+        // Vérification si on est dans la zone du cursus
+        const inCursusArea = scrollPosition >= startThreshold && scrollPosition < endThreshold;
+
+        // Afficher/Masquer la timeline fixe
+        dotsTimeline.classList.toggle('visible', inCursusArea);
+
+        // Activation du header
+        if (cursusHeader) {
+          cursusHeader.classList.toggle('active', inCursusArea);
+          const shouldBeFixed = scrollPosition > cursusSectionTop + 100;
+          cursusHeader.classList.toggle('fixed', shouldBeFixed && inCursusArea);
+        }
+
+        if (!inCursusArea) {
+          items.forEach(item => item.classList.remove('active'));
+          dots.forEach(dot => dot.classList.remove('active'));
+          connections.forEach(connection => connection.classList.remove('active'));
+          return;
+        }
+
+        // Activation timeline items
+        items.forEach((item, index) => {
+          const itemOffset = vhToPx(itemOffsetsVh[index]);
+          const itemTriggerPoint = cursusSectionTop + itemOffset;
+          item.classList.toggle('active', scrollPosition >= itemTriggerPoint);
         });
-      });
-    }
-  </script>
 
-  <script>// Timeline animation script
-    const items = document.querySelectorAll('.timeline-item');
-    const dots = document.querySelectorAll('.dot');
-    const connections = document.querySelectorAll('.dot-connection');
-    const dotsTimeline = document.querySelector('.dots-timeline');
-    const timeline = document.getElementById('timeline');
-    
-    // Convert vh to pixels dynamically
-    function vhToPx(vh) {
-      return (vh * window.innerHeight) / 100;
-    }
-    
-    // Different offsets for items and dots using vh units
-    const itemOffsetsVh = [-3, 30, 60]; // in vh units instead of pixels
-    const dotOffsetsVh = [0, 30, 60]; // in vh units instead of pixels
-    
-    // Debug mode (set to true to see console logs)
-    const debug = false;
-    
-    function updateTimeline() {
-  const scrollPosition = window.scrollY;
-  
-  // Get section positions
-  const cursusSection = document.getElementById('cursus');
-  const cursusSectionTop = cursusSection.offsetTop;
-  const whiteSection = document.querySelector('.projects');
-  const whiteSectionTop = whiteSection.offsetTop;
-  
-  // Get the header
-  const cursusHeader = document.querySelector('.cursus-header');
-  
-  // Enable debug temporarily to troubleshoot
-  const debug = true;
-  
-  if (debug) {
-    console.log('Scroll position:', scrollPosition);
-    console.log('Cursus section top:', cursusSectionTop);
-  }
-  
-  // Calculate thresholds - more direct calculation
-  const startThreshold = cursusSectionTop - 50; // Start slightly before section
-  const endThreshold = whiteSectionTop - vhToPx(110);   // End before next section
-  
-  // Check if we're in the cursus area
-  const inCursusArea = scrollPosition >= startThreshold && 
-                       scrollPosition < endThreshold;
-  
-  // Handle dots-timeline visibility
-  dotsTimeline.classList.toggle('visible', inCursusArea);
-  
-  // Handle header visibility and position
-  if (cursusHeader) {
-    cursusHeader.classList.toggle('active', inCursusArea);
-    
-    // Apply fixed positioning when scrolled past the section start
-    const shouldBeFixed = scrollPosition > cursusSectionTop + 100;
-    cursusHeader.classList.toggle('fixed', shouldBeFixed && inCursusArea);
-    
-    if (debug) {
-      console.log('Header should be active:', inCursusArea);
-      console.log('Header should be fixed:', shouldBeFixed && inCursusArea);
-    }
-  }
-  
-  // If we're not in cursus area, make everything inactive
-  if (!inCursusArea) {
-    items.forEach(item => item.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    connections.forEach(connection => connection.classList.remove('active'));
-    return; // Exit early
-  }
-      
-      // If we're in the cursus area, process items and dots
-      
-      // Process timeline items
-      items.forEach((item, index) => {
-        const itemOffset = vhToPx(itemOffsetsVh[index]);
-        const itemTriggerPoint = cursusSectionTop + itemOffset;
-        
-        if (debug) {
-          console.log(`Item ${index} trigger:`, itemTriggerPoint);
-        }
-        
-        item.classList.toggle('active', scrollPosition >= itemTriggerPoint);
-      });
-      
-      // Process dots separately
-      dots.forEach((dot, index) => {
-        const dotOffset = vhToPx(dotOffsetsVh[index]);
-        const dotTriggerPoint = cursusSectionTop + dotOffset;
-        
-        if (debug) {
-          console.log(`Dot ${index} trigger:`, dotTriggerPoint);
-        }
-        
-        const isActive = scrollPosition >= dotTriggerPoint;
-        dot.classList.toggle('active', isActive);
-        
-        // Handle connections between dots
-        if (index > 0 && connections[index-1]) {
-          connections[index-1].classList.toggle('active', isActive);
-        }
-      });
-    }
-    
-    // Initial call
-    updateTimeline();
-    
-    // Call on scroll
-    window.addEventListener('scroll', updateTimeline);
-    
-    // Also update on window resize to recalculate vh units
-    window.addEventListener('resize', updateTimeline);
-  </script>
+        // Activation des points (dots)
+        dots.forEach((dot, index) => {
+          const dotOffset = vhToPx(dotOffsetsVh[index]);
+          const dotTriggerPoint = cursusSectionTop + dotOffset;
+          const isActive = scrollPosition >= dotTriggerPoint;
+          dot.classList.toggle('active', isActive);
+          
+          if (index > 0 && connections[index-1]) {
+            connections[index-1].classList.toggle('active', isActive);
+          }
+        });
+      }
 
-  <script>
-    let slides = document.querySelectorAll('.slider .carousel-slide');
-    let next = document.getElementById('next');
-    let prev = document.getElementById('prev');
-    
-    // Start with a middle slide for better visual effect
-    let active = Math.min(4, Math.floor(slides.length/2)); 
-    
-    function loadShow() {
-      let stt = 0;
+      updateTimeline();
+      window.addEventListener('scroll', updateTimeline);
+      window.addEventListener('resize', updateTimeline);
+    </script>
+
+    <script>
+      // Carousel de projets
+      let slides = document.querySelectorAll('.slider .carousel-slide');
+      let next = document.getElementById('next');
+      let prev = document.getElementById('prev');
       
-      // Apply styles to the active slide
-      slides[active].style.transform = `none`;
-      slides[active].style.zIndex = 1;
-      slides[active].style.filter = 'none';
-      slides[active].style.opacity = 1;
-      slides[active].style.top = '0';
+      let active = Math.min(4, Math.floor(slides.length / 2)); 
       
-      // Handle slides to the right
-      for(var i = active + 1; i < slides.length; i++) {
+      function loadShow() {
+        let stt = 0;
+        
+        // Slide active
+        slides[active].style.transform = `none`;
+        slides[active].style.zIndex = 1;
+        slides[active].style.filter = 'none';
+        slides[active].style.opacity = 1;
+        slides[active].style.top = '0';
+        
+        // Slides à droite
+        for(let i = active + 1; i < slides.length; i++) {
           stt++;
           slides[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
           slides[i].style.zIndex = -stt;
           slides[i].style.filter = 'blur(5px)';
           slides[i].style.opacity = stt > 2 ? 0 : 0.6;
-          slides[i].style.top = `${20*stt}px`; // Add vertical offset for better 3D effect
-      }
-      
-      // Handle slides to the left
-      stt = 0;
-      for(var i = active - 1; i >= 0; i--) {
+          slides[i].style.top = `${20*stt}px`;
+        }
+        
+        // Slides à gauche
+        stt = 0;
+        for(let i = active - 1; i >= 0; i--) {
           stt++;
           slides[i].style.transform = `translateX(${-120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(1deg)`;
           slides[i].style.zIndex = -stt;
           slides[i].style.filter = 'blur(5px)';
           slides[i].style.opacity = stt > 2 ? 0 : 0.6;
-          slides[i].style.top = `${20*stt}px`; // Add vertical offset for better 3D effect
+          slides[i].style.top = `${20*stt}px`;
+        }
       }
-  }
-    
-    loadShow();
-    
-    next.onclick = function(){
+      
+      loadShow();
+      
+      next.onclick = function(){
         active = active + 1 < slides.length ? active + 1 : active;
         loadShow();
-    }
-    
-    prev.onclick = function(){
+      }
+      
+      prev.onclick = function(){
         active = active - 1 >= 0 ? active - 1 : active;
         loadShow();
-    }
-  </script>
-</body>
+      }
+    </script>
+  </body>
 </html>
