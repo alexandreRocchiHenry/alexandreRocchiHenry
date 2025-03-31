@@ -635,8 +635,8 @@ mark:not(.js-highlight) {
 
 /* Section Projets */
 .projects {
-  background-color: #F8F9FA; /* Ivory White */
-  min-height: 200vh;
+  background-color: #A2B29F; /* Ivory White */
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -693,7 +693,7 @@ footer {
   width: 300px;
   height: 300px;
   text-align: justify;
-  background-color: #F8F9FA; /* Ivory White */
+  background-color: #F8EDE3; /* Ivory White */
   border-radius: 10px;
   padding: 20px;
   transition: 0.5s;
@@ -708,7 +708,7 @@ footer {
 #next, #prev {
   position: absolute;
   top: 40%;
-  color: #F8F9FA;
+  color: #F8EDE3;
   background-color: rgba(0,0,0,0.3);
   border: none;
   font-size: 2rem;
@@ -735,4 +735,19 @@ footer {
 #next:hover, #prev:hover {
   background-color: rgba(0,0,0,0.6);
   transform: scale(1.1);
+}
+
+.stages {
+  background-color: #F8EDE3; /* Ivory White */
+  min-height: 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem;
+}
+
+.stages h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #424242;
 }
