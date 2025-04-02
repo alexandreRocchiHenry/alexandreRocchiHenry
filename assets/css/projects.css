@@ -1,0 +1,102 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;700&display=swap');
+
+/* Base styling */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #424242;
+  background-color: #EDF1D6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: #2E7D32;
+}
+
+/* Example container for project elements */
+.projects {
+  background-color: #EDF1D6;
+  min-height: 150vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem;
+
+}
+
+/* Project headings */
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+  color: #424242;
+}
+
+.ss-titre p {
+  font-size: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: #424242;
+  padding: 2rem 2rem;
+}
+
+/* Reusable button style */
+.btn {
+  background-color: #f57a28;
+  color: #EDF1D6;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+   /* Grid layout */
+   .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding-top: 2rem;
+  }
+
+  /* Individual interest item */
+  .interest-item {
+    background: #F8EDE3;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    max-height: 20vh;
+    max-width: 700px;
+  }
+
+  .interest-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .interest-item i {
+    font-size: 2rem;
+    color: #007BFF;
+    margin-bottom: 15px;
+  }
+
+  .interest-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .interest-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+  }

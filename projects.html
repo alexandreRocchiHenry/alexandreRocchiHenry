@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Projets - Alexandre Rocchi</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/projects.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
@@ -15,24 +15,244 @@
         });
     </script>
   <main>
-    <section class="projects">
-      <h2>Projets Académiques</h2>
+    <section class="projects" id="serieTemp">
+      <h2>Détection Non Supervisée de Changements Atypiques dans les Séries d'Images Satellitaires</h2>
+      <p class="ss-titre">Projet Fil Rouge Airbus – Data Science & Computer Vision</p>
       <article>
-        <h3>Projet Green-ER</h3>
-        <p>Analyse des données de consommation d'énergie et modélisation prédictive avec Scikit-learn.</p>
-        <a href="https://github.com/tonprofil/green-er" target="_blank">Voir le projet</a>
+        <h3>Description du projet</h3>
+        <p>
+          Dans le cadre d’une collaboration avec Airbus Défense & Space, ce projet vise à détecter automatiquement des changements atypiques sur des séries temporelles d’images satellites issues du dataset DynamicEarthNet. L’objectif est de hiérarchiser les anomalies pour faciliter l’analyse des phénomènes tels que la déforestation, la reforestation ou les transitions dans l’usage des sols. La solution repose sur une approche non supervisée et semi-supervisée, intégrant des techniques avancées de traitement d’images et d’apprentissage profond.
+        </p>
+        <h3>Modèle et Méthodologie</h3>
+        <p>
+          La méthodologie combine :
+          <ul>
+            <li>La vérification de l’alignement des images par détection de points clés (SIFT) pour garantir une qualité optimale des données.</li>
+            <li>L’extraction d’embeddings locaux via des modèles de fondation (DinoV2, SAM2) et l’utilisation de mesures de similarité (distance cosinus et euclidienne) pour quantifier les changements.</li>
+            <li>L’exploitation d’un cadre semi-supervisé, s’appuyant sur des labels mensuels pour modéliser la dynamique temporelle des environnements.</li>
+            <li>L’optimisation des hyperparamètres via des pipelines automatisés (GridSearch, Optuna) afin d’ajuster précisément les seuils de détection et améliorer les performances.</li>
+          </ul>
+        </p>
       </article>
+    
+      <div class="interests-grid">
+        <div class="interest-item">
+          <i class="fas fa-cloud"></i>
+          <h3>Analyse Avancée des Données Géospatiales</h3>
+          <p>
+            Traitement et interprétation de fichiers GeoTIFF volumineux, intégrant des données multispectrales pour une analyse fine des environnements terrestres.
+          </p>
+        </div>
+    
+        <div class="interest-item">
+          <i class="fas fa-comments"></i>
+          <h3>Alignement Précis des Images</h3>
+          <p>
+            Vérification et correction des décalages entre images à l’aide de l’algorithme SIFT, garantissant des comparaisons temporelles fiables.
+          </p>
+        </div>
+    
+        <div class="interest-item">
+          <i class="fas fa-robot"></i>
+          <h3>Extraction d'Embeddings Innovante</h3>
+          <p>
+            Utilisation de modèles de fondation (DinoV2, SAM2) pour générer des représentations locales robustes, essentielles à la détection fine des changements.
+          </p>
+        </div>
+    
+        <div class="interest-item">
+          <i class="fas fa-network-wired"></i>
+          <h3>Approche Semi-Supervisée Temporelle</h3>
+          <p>
+            Intégration de labels mensuels pour capturer l’évolution des changements dans le temps, permettant une modélisation adaptée à la variabilité des données.
+          </p>
+        </div>
+    
+        <div class="interest-item">
+          <i class="fas fa-cogs"></i>
+          <h3>Optimisation des Hyperparamètres</h3>
+          <p>
+            Mise en place d’un pipeline automatisé (GridSearch, Optuna) pour l’ajustement optimal des seuils et des paramètres, assurant une robustesse maximale du modèle.
+          </p>
+        </div>
+    
+        <div class="interest-item">
+          <i class="fas fa-chart-line"></i>
+          <h3>Visualisation Quantitative des Changements</h3>
+          <p>
+            Création de heatmaps et de matrices de changements pour visualiser et quantifier précisément les modifications locales sur des patches d’images.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="projects" id="computerVision">
+      <h2>Projet de Vision par Ordinateur</h2>
+      <p class="ss-titre">Projet académique - Computer Vision</p>
       <article>
-        <h3>Détection en imagerie satellitaire - Airbus</h3>
-        <p>Pipeline de Deep Learning avec TorchGeo pour la détection d'évolutions critiques.</p>
-        <a href="https://github.com/tonprofil/airbus-imagerie" target="_blank">Voir le projet</a>
+        <h3>Description du projet</h3>
+        <p>Ce projet vise la segmentation d'images satellitaires (4 bandes) en 7 classes. Les données sont issues du dataset DynamicEarthNet. L’objectif est de comparer les performances par continent, en entrainant le modèle sur quatres continents et en testant les résultats sur le cinquième.</p>
+        <h3>Modèle</h3>
+        <p>Le modèle utilise FarSeg (TorchGeo) avec ResNet comme backbone. Ceci nous permet d'avoir de bon résultats avec un mIou depassant les 0.7 sur un ensemble de train contenant tout les continents</p>
       </article>
-      <h2>Projets Personnels</h2>
+    
+      <div class="interests-grid">
+        <!-- Chargement et Prétraitement -->
+        <div class="interest-item">
+          <i class="fas fa-cloud"></i>
+          <h3>Chargement des données</h3>
+          <p>Implémentation d'un dataloader permettant de gérer les images RBG+NIR et répartition selon les coordonées gps dans les jeux de test ou de validation</p>
+        </div>
+    
+        <!-- skip_none_collate_fn -->
+        <div class="interest-item">
+          <i class="fas fa-robot"></i>
+          <h3>Data parallèlisation et AMP</h3>
+          <p>Mise en place de parallèlisation GPU et de GradScaler pour optimiser les temps d'entrainement. MixedPrecision pour optimisé la mémoire.</p>
+        </div>
+    
+        <!-- FarSeg + ResNet -->
+        <div class="interest-item">
+          <i class="fas fa-network-wired"></i>
+          <h3>FarSeg & ResNet</h3>
+          <p>L’intégration de FarSeg avec un ResNet pré-entraîné permet une segmentation plus robuste sur plusieurs types de terrains.</p>
+        </div>
+
+        <div class="interest-item">
+          <i class="fas fa-chart-line"></i>
+          <h3>Stratégie d'entrainant</h3>
+          <p>Defreezing progressif du modèle pour éviter la divergence et permettre d'affiner le réseau de neuronnes</p>
+        </div>
+    
+        <!-- Évaluation des performances -->
+        <div class="interest-item">
+          <i class="fas fa-chart-line"></i>
+          <h3>Évaluation</h3>
+          <p>Les métriques (IoU, précision, etc.) sont calculées pour analyser les performances et comparer les résultats selon les ensembles continentaux.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="serieTemp">
+      <h2>Projets Series Temporelles</h2>
+      <p class="ss-titre">Projet personnel - Computer Vision </p>
       <article>
-        <h3>Projet Personnel 1</h3>
-        <p>Description brève du projet personnel.</p>
-        <a href="https://github.com/tonprofil/projet-personnel" target="_blank">Voir le projet</a>
+        <h3>Description du projet</h3>
+        <p>Ce projet personnel vise à détecter et à segmenter des changements environnementaux en analysant des séries temporelles d’images satellites Landsat. Ce projet pourrait permettre de suivre des phénomènes tels que la déforestation, l’urbanisation ou les impacts du changement climatique.</p>
+        <h3>Modèle</h3>
+        <p>Un encodeur DeepLabV3 basé sur ResNet50 pré-entraîné spécifiquement sur des images satellitaires.
+          Un réseau ConvLSTM pour modéliser explicitement les dynamiques temporelles.</p>
+        <p> Ce projet utilise des données semi-supervisées avec une frame annoté par mois sur un prise de donnée quotidienne (dataset DynamicEarthNet)</p>
+        <a href="https://github.com/alexandreRocchiHenry/SerieTemp_LandSat_Images" target="_blank">Voir le projet</a>
       </article>
+
+      <div class="interests-grid">
+        <div class="interest-item">
+          <i class="fas fa-cloud"></i>
+          <h3>Analyse de GeoTiff</h3>
+          <p>
+            Analyse et traitement de données géospatiales avec GeoPandas et Rasterio.
+          </p>
+        </div>
+
+        <!-- 2. NLP -->
+        <div class="interest-item">
+          <i class="fas fa-comments"></i>
+          <h3>Alignement des images</h3>
+          <p>
+            Utilisation combiné de georeferencement et alignement sur des points clés SIFT.
+          </p>
+        </div>
+
+        <div class="interest-item">
+          <i class="fas fa-robot"></i>
+          <h3>Data augmentation satellitaire</h3>
+          <p>
+            Utilisation de GeoTorch et Albumentation pour l'augmentation de données d'images satellites.
+          </p>
+        </div>
+
+        <div class="interest-item">
+          <i class="fas fa-network-wired"></i>
+          <h3>Recherche d hyperparamètres</h3>
+          <p>
+            Mise en place d'un pipeline de recherche d'hyperparamètres avec GridSearch et Optuna.
+          </p>
+        </div>
+
+        <div class="interest-item">
+          <i class="fas fa-cogs"></i>
+          <h3>Création de modele avec Torch</h3>
+          <p>
+            Utilisation de DeepLabV3 avec un LSTM pour la segmentation de séries temporelles.
+          </p>
+        </div>
+
+        <div class="interest-item">
+          <i class="fas fa-chart-line"></i>
+          <h3>Optical Flow</h3>
+          <p>
+            implementation future dune aproche par flux optique pour la detection de changement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="serieTemp">
+      <h2>Projet - Classification d’Images</h2>
+      <p class="ss-titre">Projet personnel - Computer Vision</p>
+      <article>
+        <h3>Description du projet</h3>
+        <p>Ce projet personnel vise à classifier automatiquement différentes espèces (ici des reptiles) à partir d’images. L’objectif est d’implémenter un pipeline complet allant de la préparation des données (split, labellisation) jusqu’à l’évaluation finale par K-fold cross-validation.</p>
+    
+        <h3>Modèle</h3>
+        <p>Un réseau CNN de type EfficientNet (B0 ou B5), pré-entraîné sur ImageNet, combiné à un ensemble d’augmentations pour améliorer la robustesse du modèle.</p>
+      </article>
+    
+      <div class="interests-grid">
+        <!-- 1 -->
+        <div class="interest-item">
+          <i class="fas fa-cloud"></i>
+          <h3>Pipeline de Données</h3>
+          <p>Utilisation d’une architecture flexible pour charger, prétraiter rapidement des images et entrainer un modèle</p>
+        </div>
+    
+        <!-- 2 -->
+        <div class="interest-item">
+          <i class="fas fa-comments"></i>
+          <h3>Data Augmentation</h3>
+          <p>Applications de transformations avancées (flip, rotation, zoom, etc.).</p>
+        </div>
+    
+        <!-- 3 -->
+        <div class="interest-item">
+          <i class="fas fa-robot"></i>
+          <h3>Approche de Transfer Learning</h3>
+          <p>Fine-tuning d’EfficientNet pour l’identification multi-classes.</p>
+        </div>
+    
+        <!-- 4 -->
+        <div class="interest-item">
+          <i class="fas fa-network-wired"></i>
+          <h3>Cross-validation Stratifiée</h3>
+          <p>Implémentation de K-Folds pour une meilleure généralisation, clé dans l’évaluation robuste de modèles de détection appliqués aux données satellitaires.</p>
+        </div>
+    
+        <!-- 5 -->
+        <div class="interest-item">
+          <i class="fas fa-cogs"></i>
+          <h3>TensorFlow</h3>
+          <p>Utilisation de Tensorflow. Utilisation de la “mixed precision” afin d’accélérer le temps d’entraînement sur de larges volumes d’images.</p>
+        </div>
+    
+        <!-- 6 -->
+        <div class="interest-item">
+          <i class="fas fa-chart-line"></i>
+          <h3>Évaluation & Metrics</h3>
+          <p>Suivi via matrice de confusion et classification report pour valider la performance.</p>
+        </div>
+      </div>
     </section>
   </main>
   <footer>
