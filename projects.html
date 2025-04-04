@@ -15,76 +15,62 @@
         });
     </script>
   <main>
-    <section class="projects" id="serieTemp">
-      <h2>Détection Non Supervisée de Changements Atypiques dans les Séries d'Images Satellitaires</h2>
-      <p class="ss-titre">Projet Fil Rouge Airbus – Data Science & Computer Vision</p>
+    <section class="projects" id="airbusProject">
+      <h2>Projet Airbus - Détection de Changements Environnementaux</h2>
+      <p class="ss-titre">Projet académique - Computer Vision &amp; Telecom Paris</p>
       <article>
         <h3>Description du projet</h3>
-        <p>
-          Dans le cadre d’une collaboration avec Airbus Défense & Space, ce projet vise à détecter automatiquement des changements atypiques sur des séries temporelles d’images satellites issues du dataset DynamicEarthNet. L’objectif est de hiérarchiser les anomalies pour faciliter l’analyse des phénomènes tels que la déforestation, la reforestation ou les transitions dans l’usage des sols. La solution repose sur une approche non supervisée et semi-supervisée, intégrant des techniques avancées de traitement d’images et d’apprentissage profond.
-        </p>
-        <h3>Modèle et Méthodologie</h3>
-        <p>
-          La méthodologie combine :
-          <ul>
-            <li>La vérification de l’alignement des images par détection de points clés (SIFT) pour garantir une qualité optimale des données.</li>
-            <li>L’extraction d’embeddings locaux via des modèles de fondation (DinoV2, SAM2) et l’utilisation de mesures de similarité (distance cosinus et euclidienne) pour quantifier les changements.</li>
-            <li>L’exploitation d’un cadre semi-supervisé, s’appuyant sur des labels mensuels pour modéliser la dynamique temporelle des environnements.</li>
-            <li>L’optimisation des hyperparamètres via des pipelines automatisés (GridSearch, Optuna) afin d’ajuster précisément les seuils de détection et améliorer les performances.</li>
-          </ul>
-        </p>
+        <p>Ce projet de groupe a pour objectif de détecter de manière non supervisée des changements atypiques dans des séries temporelles d’images satellitaires. La solution développée permet de hiérarchiser les anomalies environnementales afin de focaliser l’analyse sur des zones présentant des évolutions significatives de l’occupation du sol.</p>
+    
+        <h3>Modèle &amp; Approche</h3>
+        <p>Basée sur des modèles de fondation pour l’extraction d’embeddings locaux, l’approche compare ces représentations à l’aide de mesures de similarité (cosinus et euclidienne). Le pipeline intègre également des étapes de prétraitement, de clustering et de visualisation pour une analyse fine et quantitative des changements.</p>
       </article>
     
       <div class="interests-grid">
+        <!-- 1 -->
         <div class="interest-item">
-          <i class="fas fa-cloud"></i>
-          <h3>Analyse Avancée des Données Géospatiales</h3>
-          <p>
-            Traitement et interprétation de fichiers GeoTIFF volumineux, intégrant des données multispectrales pour une analyse fine des environnements terrestres.
-          </p>
+          <i class="fas fa-image"></i>
+          <h3>Prétraitement &amp; Alignement</h3>
+          <p>Implémentation d’algorithmes pour vérifier et corriger l’alignement des images, garantissant une base de données cohérente.</p>
         </div>
     
+        <!-- 2 -->
         <div class="interest-item">
-          <i class="fas fa-comments"></i>
-          <h3>Alignement Précis des Images</h3>
-          <p>
-            Vérification et correction des décalages entre images à l’aide de l’algorithme SIFT, garantissant des comparaisons temporelles fiables.
-          </p>
+          <i class="fas fa-brain"></i>
+          <h3>Extraction d’Embeddings</h3>
+          <p>Utilisation de modèles de fondation pour générer des représentations locales, essentielles pour l’analyse fine des variations.</p>
         </div>
     
+        <!-- 3 -->
         <div class="interest-item">
-          <i class="fas fa-robot"></i>
-          <h3>Extraction d'Embeddings Innovante</h3>
-          <p>
-            Utilisation de modèles de fondation (DinoV2, SAM2) pour générer des représentations locales robustes, essentielles à la détection fine des changements.
-          </p>
+          <i class="fas fa-sliders-h"></i>
+          <h3>Mesures de Similarité</h3>
+          <p>Application de distances cosinus et euclidiennes pour quantifier les changements significatifs entre les images.</p>
         </div>
     
+        <!-- 4 -->
         <div class="interest-item">
-          <i class="fas fa-network-wired"></i>
-          <h3>Approche Semi-Supervisée Temporelle</h3>
-          <p>
-            Intégration de labels mensuels pour capturer l’évolution des changements dans le temps, permettant une modélisation adaptée à la variabilité des données.
-          </p>
+          <i class="fas fa-layer-group"></i>
+          <h3>Masques de Changement</h3>
+          <p>Génération de masques basés sur la segmentation sémantique pour visualiser et quantifier les transitions locales.</p>
         </div>
     
+        <!-- 5 -->
         <div class="interest-item">
-          <i class="fas fa-cogs"></i>
-          <h3>Optimisation des Hyperparamètres</h3>
-          <p>
-            Mise en place d’un pipeline automatisé (GridSearch, Optuna) pour l’ajustement optimal des seuils et des paramètres, assurant une robustesse maximale du modèle.
-          </p>
+          <i class="fas fa-project-diagram"></i>
+          <h3>Clustering &amp; Hiérarchisation</h3>
+          <p>Mise en place d’un pipeline de clustering (ex. avec Bertopic) pour classer et prioriser les anomalies détectées.</p>
         </div>
     
+        <!-- 6 -->
         <div class="interest-item">
-          <i class="fas fa-chart-line"></i>
-          <h3>Visualisation Quantitative des Changements</h3>
-          <p>
-            Création de heatmaps et de matrices de changements pour visualiser et quantifier précisément les modifications locales sur des patches d’images.
-          </p>
+          <i class="fas fa-chart-pie"></i>
+          <h3>Analyse Statistique</h3>
+          <p>Développement d’outils de visualisation pour suivre l’évolution des classes d’occupation du sol et évaluer la performance du modèle.</p>
         </div>
       </div>
     </section>
+    
     
 
     <section class="projects" id="computerVision">
