@@ -15,50 +15,89 @@
 
     <main>
       <!-- Slide n°1 : Diplômes -->
-      <section id="slide1" class="first-slide">
-        <div class="header-container">
-          <div id="header-placeholder"></div>
-          <script>
-            fetch('assets/html/header.html')
-              .then(response => response.text())
-              .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-              });
-          </script>
-        </div>
+      <!-- Slide pour "AI for All: From Basics to GenAI Practice" -->
+      <section id="certification-ai-for-all" class="certification-slide">
         <div class="content-container">
-          <h2>Diplômes</h2>
-          <ul>
-            <li>MS Intelligence Artificielle - Télécom Paris</li>
-            <li>Ingénieur en Automatique et Systèmes Intelligents - ENSE3 Grenoble INP</li>
-            <li>Classes Préparatoires Maths-Physiques - Lycée Massena</li>
-          </ul>
+          <h2>AI for All: From Basics to GenAI Practice</h2>
+          <!-- Afficher une image du certificat (convertie en format web) -->
+          <img src="assets/images/ai_for_all_certificate.png" alt="Certificat AI for All">
+          <p>
+            Cette certification aborde les fondamentaux de l’intelligence artificielle et de la pratique du GenAI. Les modules couvrent des notions clés telles que l’apprentissage automatique et les techniques de computer vision. 
+            <strong>Utilité professionnelle</strong> : Ces compétences permettent de développer des applications de vision par ordinateur (ex. classification d’images, détection d’objets) et d’innover dans des projets environnementaux.
+          </p>
+          <!-- Référence au certificat -->
+          <p class="citation">&#8203;:contentReference[oaicite:0]{index=0}</p>
         </div>
-
         <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
-        
       </section>
-      
-    
-      <!-- Slide n°2 : Certifications -->
-      <section id="slide2" class="certifications">
-        <h2>Certifications</h2>
-        <ul>
-          <li>Coursera : Machine Learning</li>
-          <li>Udemy : Deep Learning A-Z</li>
-          <!-- etc. -->
-        </ul>
+
+      <!-- Slide pour "AI Infrastructure and Operations Fundamentals" -->
+      <section id="certification-ai-infra" class="certification-slide">
+        <div class="content-container">
+          <h2>AI Infrastructure and Operations Fundamentals</h2>
+          <img src="assets/images/ai_infra_certificate.png" alt="Certificat AI Infrastructure">
+          <p>
+            Cette certification met en lumière la conception et la gestion d’infrastructures adaptées au déploiement de solutions d’IA. Les cours enseignent comment orchestrer des environnements de production pour des applications à haute volumétrie, comme la computer vision.
+            <strong>Utilité professionnelle</strong> : Idéal pour assurer un déploiement robuste d’applications de vision par ordinateur et pour mettre en place des systèmes de monitoring environnemental à grande échelle.
+          </p>
+          <p class="citation">&#8203;:contentReference[oaicite:1]{index=1}</p>
+        </div>
+        <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+          <span></span><span></span><span></span>
+        </button>
       </section>
-    
-      <!-- Slide n°3 : Autres ou Expériences, etc. -->
-      <section id="slide3">
-        <h2>Autre slide</h2>
-        <p>Contenu supplémentaire.</p>
+
+      <!-- Slide pour "NVIDIA AI Enterprise for Azure Professionals" -->
+      <section id="certification-nvidia-ai" class="certification-slide">
+        <div class="content-container">
+          <h2>NVIDIA AI Enterprise for Azure Professionals</h2>
+          <img src="assets/images/nvidia_ai_certificate.png" alt="Certificat NVIDIA AI Enterprise">
+          <p>
+            Cette certification atteste de compétences avancées dans le déploiement de solutions d’IA sur Azure, en exploitant les capacités de calcul GPU de NVIDIA. Les formations intègrent des outils essentiels pour le traitement d’images et l’accélération des algorithmes de computer vision.
+            <strong>Utilité professionnelle</strong> : Cruciale pour développer des solutions performantes de vision par ordinateur et pour analyser efficacement des données environnementales (ex. imagerie satellite).
+          </p>
+          <p class="citation">&#8203;:contentReference[oaicite:2]{index=2}</p>
+        </div>
+        <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+          <span></span><span></span><span></span>
+        </button>
       </section>
+
+      <!-- Slide pour "Introduction à la Cyber Sécurité" -->
+      <section id="certification-cyber-security" class="certification-slide">
+        <div class="content-container">
+          <h2>Introduction à la Cyber Sécurité</h2>
+          <img src="assets/images/cyber_security_certificate.png" alt="Certificat Cyber Sécurité">
+          <p>
+            Ce certificat atteste de la maîtrise des bases de la cyber sécurité. Bien que moins directement lié à la computer vision, il fournit des compétences essentielles pour sécuriser les systèmes d’IA et protéger les données sensibles, un atout indispensable dans un environnement professionnel connecté.
+            <strong>Utilité professionnelle</strong> : Garantir la sécurité des infrastructures de données, notamment dans le contexte de déploiement d’applications de computer vision ou de monitoring environnemental.
+          </p>
+          <p class="citation">&#8203;:contentReference[oaicite:3]{index=3}</p>
+        </div>
+        <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+          <span></span><span></span><span></span>
+        </button>
+      </section>
+
+      <!-- Slide pour "MOOC Conservation" -->
+      <section id="certification-conservation" class="certification-slide">
+        <div class="content-container">
+          <h2>MOOC Conservation</h2>
+          <img src="assets/images/mooc_conservation_certificate.png" alt="Certificat Conservation">
+          <p>
+            Ce MOOC, réalisé en partenariat avec l’IUCN-Papaco, aborde les enjeux de la conservation de la biodiversité et la lutte contre le changement climatique. Les cours offrent une vue d’ensemble sur les stratégies de gestion des ressources naturelles et la protection des écosystèmes.
+            <strong>Utilité professionnelle</strong> : Les connaissances acquises permettent de concevoir des projets de computer vision pour surveiller des phénomènes environnementaux (ex. suivi de la déforestation, surveillance de la qualité de l’eau).
+          </p>
+          <p class="citation">&#8203;:contentReference[oaicite:4]{index=4}</p>
+        </div>
+        <!-- Bouton pour défiler vers la slide suivante ou revenir en arrière -->
+        <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+          <span></span><span></span><span></span>
+        </button>
+      </section>
+
     </main>
 
 </html>
