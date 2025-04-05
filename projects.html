@@ -15,122 +15,205 @@
         });
     </script>
   <main>
+    <!-- ------------------------------------------------------------------------
+         PROJET 1 : Airbus - Détection de Changements Environnementaux
+    ------------------------------------------------------------------------- -->
     <section class="projects" id="airbusProject">
       <h2>Projet Airbus - Détection de Changements Environnementaux</h2>
       <p class="ss-titre">Projet académique - Computer Vision &amp; Telecom Paris</p>
       <article>
         <h3>Description du projet</h3>
-        <p>Ce projet de groupe a pour objectif de détecter de manière non supervisée des changements atypiques dans des séries temporelles d’images satellitaires. La solution développée permet de hiérarchiser les anomalies environnementales afin de focaliser l’analyse sur des zones présentant des évolutions significatives de l’occupation du sol.</p>
-    
-        <h3>Modèle &amp; Approche</h3>
-        <p>Basée sur des modèles de fondation pour l’extraction d’embeddings locaux, l’approche compare ces représentations à l’aide de mesures de similarité (cosinus et euclidienne). Le pipeline intègre également des étapes de prétraitement, de clustering et de visualisation pour une analyse fine et quantitative des changements.</p>
+        <p>
+          Dans ce projet mené en groupe, nous avons cherché à détecter, sans supervision, 
+          des changements inattendus dans des séries d'images satellitaires prises à 
+          différentes dates. L’objectif final était de classer par ordre d’importance 
+          les anomalies d’ordre environnemental, afin de concentrer notre analyse sur 
+          les zones présentant des évolutions majeures dans l’occupation du sol.
+        </p>
+
+        <h3>Approche</h3>
+        <p>
+          Nous nous sommes appuyés sur des modèles de fondation pour extraire 
+          des représentations (embeddings) locales, puis nous avons comparé ces 
+          vecteurs à l’aide de mesures de similarité comme la distance cosinus 
+          et euclidienne. Le pipeline comprend également plusieurs étapes 
+          (prétraitement, clustering et visualisation) afin d’obtenir une 
+          analyse plus détaillée et plus précise des changements détectés.
+        </p>
       </article>
-    
+
       <div class="interests-grid">
         <!-- 1 -->
         <div class="interest-item">
           <i class="fas fa-image"></i>
           <h3>Prétraitement &amp; Alignement</h3>
-          <p>Implémentation d’algorithmes pour vérifier et corriger l’alignement des images, garantissant une base de données cohérente.</p>
+          <p>
+            Contrôle approfondi de la correspondance spatiale entre les différentes 
+            prises de vue pour assurer une base de données homogène.
+          </p>
         </div>
-    
+
         <!-- 2 -->
         <div class="interest-item">
           <i class="fas fa-brain"></i>
           <h3>Extraction d’Embeddings</h3>
-          <p>Utilisation de modèles de fondation pour générer des représentations locales, essentielles pour l’analyse fine des variations.</p>
+          <p>
+            Utilisation de modèles de fondation pour créer des représentations locales 
+            robustes, essentielles à l’analyse fine des variations dans le paysage.
+          </p>
         </div>
-    
+
         <!-- 3 -->
         <div class="interest-item">
           <i class="fas fa-sliders-h"></i>
           <h3>Mesures de Similarité</h3>
-          <p>Application de distances cosinus et euclidiennes pour quantifier les changements significatifs entre les images.</p>
+          <p>
+            Emploi de distances cosinus et euclidiennes pour quantifier la progression 
+            ou la régression des zones potentiellement concernées par des anomalies.
+          </p>
         </div>
-    
+
         <!-- 4 -->
         <div class="interest-item">
           <i class="fas fa-layer-group"></i>
           <h3>Masques de Changement</h3>
-          <p>Génération de masques basés sur la segmentation sémantique pour visualiser et quantifier les transitions locales.</p>
+          <p>
+            Création de masques, bâtis sur la segmentation sémantique, pour mieux 
+            illustrer et mesurer les changements au niveau local.
+          </p>
         </div>
-    
+
         <!-- 5 -->
         <div class="interest-item">
           <i class="fas fa-project-diagram"></i>
           <h3>Clustering &amp; Hiérarchisation</h3>
-          <p>Mise en place d’un pipeline de clustering (ex. avec Bertopic) pour classer et prioriser les anomalies détectées.</p>
+          <p>
+            Mise en place d’un mécanisme de regroupement (avec Bertopic, par exemple) 
+            pour distinguer et prioriser les différentes formes d’anomalies environnementales.
+          </p>
         </div>
-    
+
         <!-- 6 -->
         <div class="interest-item">
           <i class="fas fa-chart-pie"></i>
           <h3>Analyse Statistique</h3>
-          <p>Développement d’outils de visualisation pour suivre l’évolution des classes d’occupation du sol et évaluer la performance du modèle.</p>
+          <p>
+            Outils de visualisation et mesures quantitatives permettant de suivre 
+            l’évolution de l’occupation des sols et d’évaluer la qualité de l’approche choisie.
+          </p>
         </div>
       </div>
     </section>
-    
-    
 
+    <!-- ------------------------------------------------------------------------
+         PROJET 2 : Vision par Ordinateur
+    ------------------------------------------------------------------------- -->
     <section class="projects" id="computerVision">
       <h2>Projet de Vision par Ordinateur</h2>
       <p class="ss-titre">Projet académique - Computer Vision</p>
       <article>
         <h3>Description du projet</h3>
-        <p>Ce projet vise la segmentation d'images satellitaires (4 bandes) en 7 classes. Les données sont issues du dataset DynamicEarthNet. L’objectif est de comparer les performances par continent, en entrainant le modèle sur quatres continents et en testant les résultats sur le cinquième.</p>
-        <h3>Modèle</h3>
-        <p>Le modèle utilise FarSeg (TorchGeo) avec ResNet comme backbone. Ceci nous permet d'avoir de bon résultats avec un mIou depassant les 0.7 sur un ensemble de train contenant tout les continents</p>
+        <p>
+          L’objectif de ce travail était de segmenter des images satellitaires (4 bandes) 
+          en sept classes distinctes. Les données provenaient du jeu de données 
+          DynamicEarthNet. Nous avons comparé la performance du modèle 
+          selon les continents, en l’entraînant sur quatre d’entre eux, puis 
+          en évaluant les résultats sur le cinquième.
+        </p>
+        <h3>Approche</h3>
+        <p>
+          Nous avons déployé FarSeg (TorchGeo) couplé à ResNet pour obtenir une 
+          segmentation fine et robuste, atteignant un mIoU supérieur à 0,7 sur un 
+          ensemble d’entraînement mondial (incluant tous les continents).
+        </p>
       </article>
     
       <div class="interests-grid">
-        <!-- Chargement et Prétraitement -->
         <div class="interest-item">
           <i class="fas fa-cloud"></i>
-          <h3>Chargement des données</h3>
-          <p>Implémentation d'un dataloader permettant de gérer les images RBG+NIR et répartition selon les coordonées gps dans les jeux de test ou de validation</p>
+          <h3>Chargement des Données</h3>
+          <p>
+            Conception d’un dataloader gérant les images RGB+NIR et leurs 
+            coordonnées GPS afin de diviser de façon cohérente les datasets en 
+            ensembles de test ou de validation.
+          </p>
         </div>
     
-        <!-- skip_none_collate_fn -->
         <div class="interest-item">
           <i class="fas fa-robot"></i>
-          <h3>Data parallèlisation et AMP</h3>
-          <p>Mise en place de parallèlisation GPU et de GradScaler pour optimiser les temps d'entrainement. MixedPrecision pour optimisé la mémoire.</p>
+          <h3>Parallélisation &amp; AMP</h3>
+          <p>
+            Utilisation optimisée du GPU et de l’API GradScaler 
+            pour réduire les temps d’entraînement, notamment via le Mixed Precision 
+            afin de diminuer la consommation mémoire.
+          </p>
         </div>
     
-        <!-- FarSeg + ResNet -->
         <div class="interest-item">
           <i class="fas fa-network-wired"></i>
-          <h3>FarSeg & ResNet</h3>
-          <p>L’intégration de FarSeg avec un ResNet pré-entraîné permet une segmentation plus robuste sur plusieurs types de terrains.</p>
+          <h3>FarSeg &amp; ResNet</h3>
+          <p>
+            Association de FarSeg et d’un ResNet pré-entraîné pour améliorer 
+            la robustesse de la segmentation, quelle que soit la nature du terrain.
+          </p>
         </div>
 
         <div class="interest-item">
           <i class="fas fa-chart-line"></i>
-          <h3>Stratégie d'entrainant</h3>
-          <p>Defreezing progressif du modèle pour éviter la divergence et permettre d'affiner le réseau de neuronnes</p>
+          <h3>Stratégie d’Entraînement</h3>
+          <p>
+            Mise en place d’un dégel progressif des couches (fine-tuning) 
+            pour stabiliser l’apprentissage et ajuster précisément le réseau de neurones.
+          </p>
         </div>
     
-        <!-- Évaluation des performances -->
         <div class="interest-item">
           <i class="fas fa-chart-line"></i>
           <h3>Évaluation</h3>
-          <p>Les métriques (IoU, précision, etc.) sont calculées pour analyser les performances et comparer les résultats selon les ensembles continentaux.</p>
+          <p>
+            Calcul d’indicateurs clés (IoU, précision, etc.) permettant de quantifier 
+            la qualité de la segmentation sur des ensembles de données continentales variées.
+          </p>
+        </div>
+
+        <div class="interest-item">
+          <i class="fas fa-chart-pie"></i>
+          <h3>Comparaison Multicontinent</h3>
+          <p>
+            Analyse comparative des performances sur chaque continent, 
+            afin d’identifier les écarts entre régions géographiques et 
+            d’affiner les hyperparamètres utilisés.
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- ------------------------------------------------------------------------
+         PROJET 3 : Séries Temporelles
+    ------------------------------------------------------------------------- -->
     <section class="projects" id="serieTemp">
-      <h2>Projets Series Temporelles</h2>
-      <p class="ss-titre">Projet personnel - Computer Vision </p>
+      <h2>Projets Séries Temporelles</h2>
+      <p class="ss-titre">Projet personnel - Computer Vision</p>
       <article>
         <h3>Description du projet</h3>
-        <p>Ce projet personnel vise à détecter et à segmenter des changements environnementaux en analysant des séries temporelles d’images satellites Landsat. Ce projet pourrait permettre de suivre des phénomènes tels que la déforestation, l’urbanisation ou les impacts du changement climatique.</p>
-        <h3>Modèle</h3>
-        <p>Un encodeur DeepLabV3 basé sur ResNet50 pré-entraîné spécifiquement sur des images satellitaires.
-          Un réseau ConvLSTM pour modéliser explicitement les dynamiques temporelles.</p>
-        <p> Ce projet utilise des données semi-supervisées avec une frame annoté par mois sur un prise de donnée quotidienne (dataset DynamicEarthNet)</p>
-        <a href="https://github.com/alexandreRocchiHenry/SerieTemp_LandSat_Images" target="_blank">Voir le projet</a>
+        <p>
+          Dans le cadre de ce projet personnel, j’ai voulu détecter et segmenter 
+          les changements environnementaux en m’appuyant sur des séries temporelles 
+          d’images satellites Landsat. L’idée est de suivre des phénomènes tels 
+          que la déforestation, l’urbanisation ou l’impact du changement climatique. A la différence du projet AIRBUS, le but ici était d'entrainer un réseau de neurones en utilisant du transfert learning. 
+        </p>
+        <h3>Approche</h3>
+        <p>
+          Le socle repose sur un encodeur DeepLabV3 (ResNet50 pré-entraîné), 
+          spécifiquement ajusté pour les images satellitaires, 
+          auquel s’ajoute un réseau ConvLSTM pour modéliser la dynamique temporelle. 
+          Les données semi-supervisées proviennent de frames annotées mensuellement 
+          sur la base de prises de vues quotidiennes (DynamicEarthNet).
+        </p>
+        <p>
+          <a href="https://github.com/alexandreRocchiHenry/SerieTemp_LandSat_Images" 
+             target="_blank">Voir le projet</a>
+        </p>
       </article>
 
       <div class="interests-grid">
@@ -138,40 +221,44 @@
           <i class="fas fa-cloud"></i>
           <h3>Analyse de GeoTiff</h3>
           <p>
-            Analyse et traitement de données géospatiales avec GeoPandas et Rasterio.
+            Manipulation et exploration de données géospatiales au moyen 
+            de bibliothèques comme GeoPandas et Rasterio.
           </p>
         </div>
 
-        <!-- 2. NLP -->
         <div class="interest-item">
           <i class="fas fa-comments"></i>
           <h3>Alignement des images</h3>
           <p>
-            Utilisation combiné de georeferencement et alignement sur des points clés SIFT.
+            Combinaison d’approches de géoréférencement et d’alignement par points-clés SIFT, 
+            garantissant une superposition précise des séries temporelles.
           </p>
         </div>
 
         <div class="interest-item">
           <i class="fas fa-robot"></i>
-          <h3>Data augmentation satellitaire</h3>
+          <h3>Data Augmentation Satellitaire</h3>
           <p>
-            Utilisation de GeoTorch et Albumentation pour l'augmentation de données d'images satellites.
+            Emploi de GeoTorch et Albumentations pour enrichir la diversité 
+            des clichés et améliorer la robustesse de la segmentation.
           </p>
         </div>
 
         <div class="interest-item">
           <i class="fas fa-network-wired"></i>
-          <h3>Recherche d hyperparamètres</h3>
+          <h3>Recherche d’Hyperparamètres</h3>
           <p>
-            Mise en place d'un pipeline de recherche d'hyperparamètres avec GridSearch et Optuna.
+            Pipeline articulé autour de GridSearch et Optuna 
+            pour ajuster finement le modèle à des conditions de terrain variées.
           </p>
         </div>
 
         <div class="interest-item">
           <i class="fas fa-cogs"></i>
-          <h3>Création de modele avec Torch</h3>
+          <h3>Combinaison DeepLabV3 &amp; LSTM</h3>
           <p>
-            Utilisation de DeepLabV3 avec un LSTM pour la segmentation de séries temporelles.
+            Mise en place d’un modèle associant DeepLabV3 et ConvLSTM, 
+            ciblé sur la détection des changements au fil du temps.
           </p>
         </div>
 
@@ -179,21 +266,34 @@
           <i class="fas fa-chart-line"></i>
           <h3>Optical Flow</h3>
           <p>
-            implementation future dune aproche par flux optique pour la detection de changement.
+            Préparation future d’une méthode basée sur le flux optique 
+            afin de repérer les variations subtiles d’une image à l’autre.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- ------------------------------------------------------------------------
+         PROJET 4 : Classification d’Images
+    ------------------------------------------------------------------------- -->
     <section class="projects" id="serieTemp">
       <h2>Projet - Classification d’Images</h2>
       <p class="ss-titre">Projet personnel - Computer Vision</p>
       <article>
         <h3>Description du projet</h3>
-        <p>Ce projet personnel vise à classifier automatiquement différentes espèces (ici des reptiles) à partir d’images. L’objectif est d’implémenter un pipeline complet allant de la préparation des données (split, labellisation) jusqu’à l’évaluation finale par K-fold cross-validation.</p>
+        <p>
+          Dans ce projet, l’idée était de classifier automatiquement différentes espèces 
+          (ici des reptiles) à partir de photographies. J’ai donc réalisé un pipeline 
+          complet, de la préparation des données (split, labellisation) jusqu’à 
+          l’évaluation avec une K-fold cross-validation.
+        </p>
     
-        <h3>Modèle</h3>
-        <p>Un réseau CNN de type EfficientNet (B0 ou B5), pré-entraîné sur ImageNet, combiné à un ensemble d’augmentations pour améliorer la robustesse du modèle.</p>
+        <h3>Approche</h3>
+        <p>
+          Nous avons opté pour un CNN de type EfficientNet (B0 ou B5), entraîné sur 
+          ImageNet, couplé à un jeu d’augmentations adaptées pour améliorer la 
+          robustesse de la classification.
+        </p>
       </article>
     
       <div class="interests-grid">
@@ -201,55 +301,85 @@
         <div class="interest-item">
           <i class="fas fa-cloud"></i>
           <h3>Pipeline de Données</h3>
-          <p>Utilisation d’une architecture flexible pour charger, prétraiter rapidement des images et entrainer un modèle</p>
+          <p>
+            Mise en place d’une architecture flexible pour charger et prétraiter rapidement 
+            de grands volumes d’images destinées à l’entraînement.
+          </p>
         </div>
     
         <!-- 2 -->
         <div class="interest-item">
           <i class="fas fa-comments"></i>
           <h3>Data Augmentation</h3>
-          <p>Applications de transformations avancées (flip, rotation, zoom, etc.).</p>
+          <p>
+            Application de transformations variées (flip, rotation, zoom, etc.) afin 
+            d’accroître la capacité du réseau à reconnaître chaque classe.
+          </p>
         </div>
     
         <!-- 3 -->
         <div class="interest-item">
           <i class="fas fa-robot"></i>
           <h3>Approche de Transfer Learning</h3>
-          <p>Fine-tuning d’EfficientNet pour l’identification multi-classes.</p>
+          <p>
+            Réutilisation d’un EfficientNet pré-entraîné, suivie d’un ajustement fin 
+            pour adapter le modèle aux différents reptiles ciblés.
+          </p>
         </div>
     
         <!-- 4 -->
         <div class="interest-item">
           <i class="fas fa-network-wired"></i>
           <h3>Cross-validation Stratifiée</h3>
-          <p>Implémentation de K-Folds pour une meilleure généralisation, clé dans l’évaluation robuste de modèles de détection appliqués aux données satellitaires.</p>
+          <p>
+            Emploi du K-Fold pour obtenir une évaluation plus stable et robuste, 
+            pratique essentielle lorsque les données sont hétérogènes ou limitées.
+          </p>
         </div>
     
         <!-- 5 -->
         <div class="interest-item">
           <i class="fas fa-cogs"></i>
           <h3>TensorFlow</h3>
-          <p>Utilisation de Tensorflow. Utilisation de la “mixed precision” afin d’accélérer le temps d’entraînement sur de larges volumes d’images.</p>
+          <p>
+            Exploitation de la “mixed precision” pour accélérer l’entraînement et 
+            prendre en charge de larges lots d’images, même sur un hardware limité.
+          </p>
         </div>
     
         <!-- 6 -->
         <div class="interest-item">
           <i class="fas fa-chart-line"></i>
-          <h3>Évaluation & Metrics</h3>
-          <p>Suivi via matrice de confusion et classification report pour valider la performance.</p>
+          <h3>Évaluation &amp; Metrics</h3>
+          <p>
+            Analyse fine des résultats via matrice de confusion et classification report, 
+            afin de mesurer la capacité du modèle à bien distinguer les espèces.
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- ------------------------------------------------------------------------
+         PROJET 5 : Analyse de Manifestos & Chartes (NLP)
+    ------------------------------------------------------------------------- -->
     <section class="projects" id="nlpProject">
-      <h2>Projet - Analyse de Manifestos & Chartes</h2>
+      <h2>Projet - Analyse de Manifestos &amp; Chartes</h2>
       <p class="ss-titre">Projet académique - NLP</p>
       <article>
         <h3>Description du projet</h3>
-        <p>Ce projet se concentre sur l'analyse et le clustering de manifestos et chartes relatifs à l'IA et à l'éthique. L'objectif est d'extraire les thématiques principales et de regrouper les documents pour dégager les tendances et divergences dans les discours.</p>
+        <p>
+          L’objectif était de repérer et de regrouper les thèmes saillants 
+          d’un ensemble de manifestos et de chartes portant sur l’IA et l’éthique. 
+          Le but : mettre en évidence à la fois les points communs et les divergences 
+          dans les discours, afin de comprendre les grandes tendances du domaine.
+        </p>
     
-        <h3>Modèle & Méthodologie</h3>
-        <p>Implémentation d'une pipeline complète intégrant le prétraitement, la vectorisation et le clustering. Des techniques telles que BERTopic, LDA et GPTopic sont utilisées pour extraire et interpréter les thèmes sous-jacents.</p>
+        <h3>Approche</h3>
+        <p>
+          Nous avons élaboré une pipeline complète allant du prétraitement et de la vectorisation 
+          des textes, jusqu’au clustering (BERTopic, LDA, GPTopic) et à l’interprétation 
+          des regroupements thématiques.
+        </p>
       </article>
     
       <div class="interests-grid">
@@ -257,55 +387,88 @@
         <div class="interest-item">
           <i class="fas fa-code"></i>
           <h3>Pipeline de Clustering</h3>
-          <p>Mise en place d'une pipeline robuste pour prétraiter, vectoriser et regrouper les textes.</p>
+          <p>
+            Création d’un flux complet pour normaliser, vectoriser et grouper les documents, 
+            permettant de faire émerger des catégories cohérentes.
+          </p>
         </div>
     
         <!-- 2 -->
         <div class="interest-item">
           <i class="fas fa-brain"></i>
           <h3>Extraction de Thèmes</h3>
-          <p>Utilisation de BERTopic pour identifier des thématiques cohérentes et pertinentes.</p>
+          <p>
+            Utilisation de BERTopic pour mettre en évidence les thématiques structurantes 
+            et faciliter l’identification des axes majeurs.
+          </p>
         </div>
     
         <!-- 3 -->
         <div class="interest-item">
           <i class="fas fa-database"></i>
           <h3>Prétraitement des Textes</h3>
-          <p>Nettoyage, tokenisation et normalisation des données pour garantir une analyse de qualité.</p>
+          <p>
+            Nettoyage approfondi (tokenisation, élimination du bruit, etc.), 
+            indispensable pour obtenir une modélisation cohérente.
+          </p>
         </div>
     
         <!-- 4 -->
         <div class="interest-item">
           <i class="fas fa-chart-pie"></i>
           <h3>Évaluation des Clusters</h3>
-          <p>Application de métriques de cohérence pour valider la pertinence des regroupements.</p>
+          <p>
+            Calcul de métriques telles que la cohérence sémantique, 
+            pour valider la pertinence des regroupements.
+          </p>
         </div>
     
         <!-- 5 -->
         <div class="interest-item">
           <i class="fas fa-network-wired"></i>
           <h3>Transférabilité des Méthodes</h3>
-          <p>Techniques applicables à d'autres domaines, notamment à la vision par ordinateur pour l'analyse d'images environnementales.</p>
+          <p>
+            Possibilité d’étendre ces approches à d’autres secteurs, 
+            notamment la vision par ordinateur pour l’analyse d’images environnementales.
+          </p>
         </div>
     
         <!-- 6 -->
         <div class="interest-item">
           <i class="fas fa-eye"></i>
           <h3>Visualisation Interactive</h3>
-          <p>Création de visualisations interactives pour interpréter et communiquer efficacement les résultats.</p>
+          <p>
+            Création d’outils de visualisation permettant d’explorer 
+            et de communiquer clairement les regroupements thématiques au public.
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- ------------------------------------------------------------------------
+         PROJET 6 : Traduction Automatique de Code
+    ------------------------------------------------------------------------- -->
     <section class="projects" id="projetFilRouge">
       <h2>Projet - Traduction Automatique de Code</h2>
       <p class="ss-titre">Projet de groupe - IDEMIA</p>
       <article>
         <h3>Description du projet</h3>
-        <p>Ce projet de groupe, mené en collaboration avec IDEMIA, a pour objectif de développer une pipeline innovante afin de traduire automatiquement des codebases multi-langages (Python, Golang, C) vers un langage de production unique (C). Cette solution vise à simplifier l’intégration et la maintenance des démonstrateurs industriels, en combinant des techniques avancées de prétraitement du code, l’utilisation de modèles de langage (LLM) et une validation robuste par tests automatisés.</p>
+        <p>
+          En collaboration avec IDEMIA, ce projet de groupe visait à élaborer une 
+          chaîne de traitement innovante pour traduire automatiquement des codebases 
+          écrites en divers langages (Python, Golang, C) vers un unique langage de 
+          production (C). L’enjeu majeur : simplifier l’intégration et la maintenance 
+          des démonstrateurs industriels. Pour cela, nous avons couplé prétraitement 
+          avancé, modèles de langage (LLM) et tests automatisés robustes.
+        </p>
     
-        <h3>Modèle</h3>
-        <p>La chaîne de traitement repose sur plusieurs étapes clés : tokenisation, extraction d’arbre syntaxique (AST), traduction via des LLM (comme Llama 3 ou GPT-3.5) et boucle de correction itérative, intégrant des outils de diagnostic (clang-tidy, clang-format) et la génération automatique de cas de tests.</p>
+        <h3>Approche</h3>
+        <p>
+          La chaîne de traitement comporte plusieurs étapes : tokenisation, extraction 
+          d’arbres syntaxiques (AST), traduction via des LLM (Llama 3 ou GPT-3.5) 
+          et une itération de corrections automatiques, incluant des outils de diagnostic 
+          (clang-tidy, clang-format) et la génération de tests unitaires.
+        </p>
       </article>
     
       <div class="interests-grid">
@@ -313,55 +476,88 @@
         <div class="interest-item">
           <i class="fas fa-code"></i>
           <h3>Prétraitement Avancé</h3>
-          <p>Mise en place d'une pipeline de tokenisation et d'extraction d'AST pour uniformiser et préparer le code à la traduction.</p>
+          <p>
+            Intégration d’une pipeline de tokenisation et d’analyse d’AST pour 
+            préparer au mieux le code à la phase de traduction automatique.
+          </p>
         </div>
     
         <!-- 2 -->
         <div class="interest-item">
           <i class="fas fa-robot"></i>
           <h3>Traduction par LLM</h3>
-          <p>Utilisation de modèles de langage avancés pour convertir automatiquement des fragments de code entre différents langages.</p>
+          <p>
+            Exploitation de modèles de langage de pointe pour convertir différents 
+            fragments de code dans le langage cible.
+          </p>
         </div>
     
         <!-- 3 -->
         <div class="interest-item">
           <i class="fas fa-check-circle"></i>
           <h3>Validation et Correction</h3>
-          <p>Intégration d'outils de tests automatisés et de diagnostic pour assurer la qualité et la fiabilité du code traduit.</p>
+          <p>
+            Boucle de retours automatiques (clang-tidy, clang-format) et tests unitaires 
+            pour assurer une qualité de code conforme aux attentes industrielles.
+          </p>
         </div>
     
         <!-- 4 -->
         <div class="interest-item">
           <i class="fas fa-sitemap"></i>
           <h3>Analyse Statique</h3>
-          <p>Détection des dépendances et décomposition du code en modules pour faciliter une traduction modulaire et structurée.</p>
+          <p>
+            Repérage des dépendances et découpage en modules 
+            pour garantir une traduction structurée et plus aisée à maintenir.
+          </p>
         </div>
     
         <!-- 5 -->
         <div class="interest-item">
           <i class="fas fa-vial"></i>
           <h3>Cas de Tests Automatisés</h3>
-          <p>Génération et exécution de tests automatiques pour vérifier la cohérence fonctionnelle post-traduction.</p>
+          <p>
+            Génération de jeux de tests pour vérifier la validité fonctionnelle 
+            du code traduit, minimisant les régressions potentielles.
+          </p>
         </div>
     
         <!-- 6 -->
         <div class="interest-item">
           <i class="fas fa-chart-line"></i>
           <h3>Métriques de Performance</h3>
-          <p>Évaluation via des indicateurs tels que le Bleu Score et la précision de compilation pour mesurer l'efficacité de la traduction.</p>
+          <p>
+            Mesure de la qualité de la traduction via des scores (BLEU, compilation, etc.) 
+            afin d’évaluer objectivement l’efficacité de la pipeline.
+          </p>
         </div>
       </div>
     </section>
-    
+
+    <!-- ------------------------------------------------------------------------
+         PROJET 7 : Streamlit Food.com
+    ------------------------------------------------------------------------- -->
     <section class="projects" id="projetGroupe">
       <h2>Projet - Streamlit Food.com</h2>
-      <p class="ss-titre">Projet académique - Big Data & Analyse</p>
+      <p class="ss-titre">Projet académique - Big Data &amp; Analyse</p>
       <article>
         <h3>Description du projet</h3>
-        <p>Ce projet de groupe a porté sur le développement d’une plateforme complète pour le traitement et l’analyse de vastes volumes de données environnementales. L’objectif principal était d’automatiser l’ingestion, le prétraitement et l’analyse de données hétérogènes afin d’extraire des indicateurs clés liés à l’évolution des phénomènes naturels, tout en mettant en place des outils transposables à divers domaines d’analyse.</p>
+        <p>
+          Dans ce projet mené en groupe, nous avons construit une plateforme globale 
+          d’ingestion, de prétraitement et d’analyse de grandes masses de données 
+          environnementales. L’objectif était de dégager des indicateurs clés 
+          sur l’évolution de phénomènes naturels, tout en fournissant un ensemble 
+          d’outils réutilisables dans différents secteurs.
+        </p>
         
-        <h3>Technologies & Méthodologies</h3>
-        <p>Les solutions mises en place intègrent des pipelines de traitement robustes, des techniques de clustering thématique (notamment via Bertopic), et des dashboards interactifs pour la visualisation des résultats. Ces compétences se révèlent particulièrement pertinentes pour des applications avancées dans le traitement d’images et l’analyse spatio-temporelle.</p>
+        <h3>Approche</h3>
+        <p>
+          Nous avons mis en place des pipelines robustes, exploré des techniques 
+          de clustering thématique (dont Bertopic) et développé des tableaux 
+          de bord dynamiques pour faciliter la visualisation des résultats. 
+          Ces compétences se sont avérées particulièrement utiles pour des applications 
+          complexes comme l’analyse spatio-temporelle d’images.
+        </p>
       </article>
       
       <div class="interests-grid">
@@ -369,48 +565,63 @@
         <div class="interest-item">
           <i class="fas fa-database"></i>
           <h3>Application Streamlit</h3>
-          <p>Mise en place d'une application Streamlit pour analyser les données et présenter le pré traitement.</p>
+          <p>
+            Développement d’une interface interactive pour gérer la préparation des données 
+            et présenter en direct les résultats de l’analyse.
+          </p>
         </div>
         
         <!-- 2 -->
         <div class="interest-item">
           <i class="fas fa-project-diagram"></i>
           <h3>Clustering Thématique</h3>
-          <p>Implémentation d'un pipeline de clustering utilisant Bertopic pour extraire des tendances pertinentes.</p>
+          <p>
+            Mise en place d’un pipeline de clustering s’appuyant sur Bertopic 
+            pour extraire les tendances fortes et organiser les données.
+          </p>
         </div>
         
         <!-- 3 -->
         <div class="interest-item">
           <i class="fas fa-map-marked-alt"></i>
           <h3>Analyse Spatio-Temporelle</h3>
-          <p>Exploitation de techniques analytiques pour corréler efficacement données géographiques et temporelles.</p>
+          <p>
+            Exploitation de méthodes d’analyse géographique et temporelle, 
+            afin de croiser efficacement différentes sources d’information.
+          </p>
         </div>
         
         <!-- 4 -->
         <div class="interest-item">
           <i class="fas fa-chart-area"></i>
           <h3>Visualisation Interactive</h3>
-          <p>Création de dashboards dynamiques pour suivre en temps réel les indicateurs environnementaux clés.</p>
+          <p>
+            Conception de tableaux de bord graphiques et dynamiques 
+            pour un suivi en temps réel des indicateurs-clés.
+          </p>
         </div>
         
         <!-- 5 -->
         <div class="interest-item">
           <i class="fas fa-tachometer-alt"></i>
-          <h3>Optimisation & Scalabilité</h3>
-          <p>Développement de solutions permettant d’optimiser les performances de traitement dans un contexte Big Data.</p>
+          <h3>Optimisation &amp; Scalabilité</h3>
+          <p>
+            Adaptations techniques pour accélérer les calculs et soutenir 
+            des volumes de données conséquents, cruciaux dans un contexte Big Data.
+          </p>
         </div>
         
         <!-- 6 -->
         <div class="interest-item">
           <i class="fas fa-users"></i>
           <h3>Collaboration Agile</h3>
-          <p>Application d’une démarche collaborative et agile pour intégrer diverses expertises et sources de données.</p>
+          <p>
+            Approche de travail itérative et multidisciplinaire, 
+            favorisant la coordination efficace entre plusieurs expertises métier.
+          </p>
         </div>
       </div>
     </section>
-    
-    
-
   </main>
   <footer>
     <p>&copy; 2025 Alexandre Rocchi. Tous droits réservés.</p>
