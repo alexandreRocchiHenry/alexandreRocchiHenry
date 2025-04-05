@@ -1,4 +1,3 @@
-
 <script>
   function scrollToNextSlide() {
     window.scrollBy({ top: window.innerHeight, left: 0, behavior: 'smooth' });
@@ -12,90 +11,211 @@
   <title>Certifications - Alexandre Rocchi</title>
   <link rel="stylesheet" href="assets/css/certifications.css">
 </head>
-
-    <main>
-      <!-- Slide n°1 : Diplômes -->
-      <!-- Slide pour "AI for All: From Basics to GenAI Practice" -->
-      <section id="certification-ai-for-all" class="certification-slide">
-        <div class="content-container">
+<body>
+  <main>
+    <!-- Slide n°1 : AI for All: From Basics to GenAI Practice -->
+    <section id="certification-ai-for-all" class="certification-slide">
+      <div class="content-container">
+        <div class="cert-text">
           <h2>AI for All: From Basics to GenAI Practice</h2>
-          <!-- Afficher une image du certificat (convertie en format web) -->
-          <img src="assets/images/ai_for_all_certificate.png" alt="Certificat AI for All">
           <p>
-            Cette certification aborde les fondamentaux de l’intelligence artificielle et de la pratique du GenAI. Les modules couvrent des notions clés telles que l’apprentissage automatique et les techniques de computer vision. 
-            <strong>Utilité professionnelle</strong> : Ces compétences permettent de développer des applications de vision par ordinateur (ex. classification d’images, détection d’objets) et d’innover dans des projets environnementaux.
+            Cette certification aborde les fondamentaux de l'intelligence artificielle et de la pratique du GenAI. Les modules incluent : 
+            <strong>Introduction à l’IA</strong>, <strong>Apprentissage Automatique</strong>, <strong>Fondamentaux du Deep Learning</strong> et <strong>Générative AI</strong>.
+          </p>
+          <p>
+            <strong>Utilité professionnelle</strong> : Ces compétences offrent une base solide pour développer des solutions intelligentes et s’adapter aux évolutions technologiques.
           </p>
         </div>
-        <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
-          <span></span><span></span><span></span>
-        </button>
-      </section>
+        <div class="cert-image">
+          <img src="assets/images/aiforall.png" alt="Certificat AI for All">
+        </div>
+      </div>
+      <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+        <span></span><span></span><span></span>
+      </button>
+    </section>
 
-      <!-- Slide pour "AI Infrastructure and Operations Fundamentals" -->
-      <section id="certification-ai-infra" class="certification-slide">
-        <div class="content-container">
+    <!-- Slide n°2 : AI Infrastructure and Operations Fundamentals -->
+    <section id="certification-ai-infra" class="certification-slide">
+      <div class="content-container">
+        <div class="cert-text">
           <h2>AI Infrastructure and Operations Fundamentals</h2>
-          <img src="assets/images/ai_infra_certificate.png" alt="Certificat AI Infrastructure">
           <p>
-            Cette certification met en lumière la conception et la gestion d’infrastructures adaptées au déploiement de solutions d’IA. Les cours enseignent comment orchestrer des environnements de production pour des applications à haute volumétrie, comme la computer vision.
-            <strong>Utilité professionnelle</strong> : Idéal pour assurer un déploiement robuste d’applications de vision par ordinateur et pour mettre en place des systèmes de monitoring environnemental à grande échelle.
+            Cette certification met en lumière la conception et la gestion d'infrastructures cloud pour l'IA. Les cours couvrent : 
+            <strong>Conception d’infrastructures cloud</strong>, <strong>Déploiement de modèles d’IA</strong>, <strong>Conteneurisation (Docker, Kubernetes)</strong> et <strong>MLOps</strong>.
           </p>
-          <p class="citation">&#8203;:contentReference[oaicite:1]{index=1}</p>
+          <p>
+            <strong>Utilité professionnelle</strong> : Elle permet d'assurer le déploiement et la maintenance d’applications intelligentes dans des environnements à grande échelle.
+          </p>
         </div>
-        <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
-          <span></span><span></span><span></span>
-        </button>
-      </section>
+        <div class="cert-image">
+          <img src="assets/images/aiinfrastructur.png" alt="Certificat AI Infrastructure">
+        </div>
+      </div>
+      <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+        <span></span><span></span><span></span>
+      </button>
+    </section>
 
-      <!-- Slide pour "NVIDIA AI Enterprise for Azure Professionals" -->
-      <section id="certification-nvidia-ai" class="certification-slide">
-        <div class="content-container">
+    <!-- Slide n°3 : NVIDIA AI Enterprise for Azure Professionals -->
+    <section id="certification-nvidia-ai" class="certification-slide">
+      <div class="content-container">
+        <div class="cert-text">
           <h2>NVIDIA AI Enterprise for Azure Professionals</h2>
-          <img src="assets/images/nvidia_ai_certificate.png" alt="Certificat NVIDIA AI Enterprise">
           <p>
-            Cette certification atteste de compétences avancées dans le déploiement de solutions d’IA sur Azure, en exploitant les capacités de calcul GPU de NVIDIA. Les formations intègrent des outils essentiels pour le traitement d’images et l’accélération des algorithmes de computer vision.
-            <strong>Utilité professionnelle</strong> : Cruciale pour développer des solutions performantes de vision par ordinateur et pour analyser efficacement des données environnementales (ex. imagerie satellite).
+            Cette certification atteste de compétences avancées pour exploiter les capacités GPU sur Azure. Les modules abordent : 
+            <strong>Optimisation GPU</strong>, <strong>Intégration des frameworks Deep Learning</strong>, <strong>Solutions d’IA en entreprise</strong> et <strong>Scalabilité</strong>.
           </p>
-          <p class="citation">&#8203;:contentReference[oaicite:2]{index=2}</p>
+          <p>
+            <strong>Utilité professionnelle</strong> : Elle renforce la capacité à développer et à optimiser des solutions intelligentes en tirant parti de puissantes infrastructures cloud.
+          </p>
         </div>
-        <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
-          <span></span><span></span><span></span>
-        </button>
-      </section>
+        <div class="cert-image">
+          <img src="assets/images/NVIDIAAI.png" alt="Certificat NVIDIA AI Enterprise">
+        </div>
+      </div>
+      <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+        <span></span><span></span><span></span>
+      </button>
+    </section>
 
-      <!-- Slide pour "Introduction à la Cyber Sécurité" -->
-      <section id="certification-cyber-security" class="certification-slide">
-        <div class="content-container">
+    <!-- Slide n°4 : Introduction à la Cyber Sécurité -->
+    <section id="certification-cyber-security" class="certification-slide">
+      <div class="content-container">
+        <div class="cert-text">
           <h2>Introduction à la Cyber Sécurité</h2>
-          <img src="assets/images/cyber_security_certificate.png" alt="Certificat Cyber Sécurité">
           <p>
-            Ce certificat atteste de la maîtrise des bases de la cyber sécurité. Bien que moins directement lié à la computer vision, il fournit des compétences essentielles pour sécuriser les systèmes d’IA et protéger les données sensibles, un atout indispensable dans un environnement professionnel connecté.
-            <strong>Utilité professionnelle</strong> : Garantir la sécurité des infrastructures de données, notamment dans le contexte de déploiement d’applications de computer vision ou de monitoring environnemental.
+            Ce certificat atteste de la maîtrise des bases en cybersécurité. Les cours couvrent : 
+            <strong>Sécurité des réseaux</strong>, <strong>Analyse des menaces</strong>, <strong>Protocoles de sécurité</strong> et <strong>Bonnes pratiques</strong>.
           </p>
-          <p class="citation">&#8203;:contentReference[oaicite:3]{index=3}</p>
+          <p>
+            <strong>Utilité professionnelle</strong> : Ces compétences sont essentielles pour sécuriser les systèmes et garantir l'intégrité des données.
+          </p>
         </div>
-        <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
-          <span></span><span></span><span></span>
-        </button>
-      </section>
+        <div class="cert-image">
+          <img src="assets/images/introcybersecurity.png" alt="Certificat Cyber Sécurité">
+        </div>
+      </div>
+      <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+        <span></span><span></span><span></span>
+      </button>
+    </section>
 
-      <!-- Slide pour "MOOC Conservation" -->
-      <section id="certification-conservation" class="certification-slide">
-        <div class="content-container">
+    <!-- Slide n°5 : MOOC Conservation -->
+    <section id="certification-conservation" class="certification-slide">
+      <div class="content-container">
+        <div class="cert-text">
           <h2>MOOC Conservation</h2>
-          <img src="assets/images/mooc_conservation_certificate.png" alt="Certificat Conservation">
           <p>
-            Ce MOOC, réalisé en partenariat avec l’IUCN-Papaco, aborde les enjeux de la conservation de la biodiversité et la lutte contre le changement climatique. Les cours offrent une vue d’ensemble sur les stratégies de gestion des ressources naturelles et la protection des écosystèmes.
-            <strong>Utilité professionnelle</strong> : Les connaissances acquises permettent de concevoir des projets de computer vision pour surveiller des phénomènes environnementaux (ex. suivi de la déforestation, surveillance de la qualité de l’eau).
+            Réalisé en partenariat avec l'IUCN-Papaco, ce MOOC aborde les enjeux de la conservation et du changement climatique. Les cours incluent : 
+            <strong>Stratégies de conservation</strong>, <strong>Gestion des ressources naturelles</strong>, <strong>Impact du changement climatique</strong> et <strong>Biodiversité</strong>.
           </p>
-          <p class="citation">&#8203;:contentReference[oaicite:4]{index=4}</p>
+          <p>
+            <strong>Utilité professionnelle</strong> : Ces acquis facilitent la compréhension des enjeux stratégiques et la mise en œuvre de solutions innovantes dans divers secteurs.
+          </p>
         </div>
-        <!-- Bouton pour défiler vers la slide suivante ou revenir en arrière -->
-        <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
-          <span></span><span></span><span></span>
-        </button>
-      </section>
+        <div class="cert-image">
+          <img src="assets/images/speciesconservation.png" alt="Certificat Conservation">
+        </div>
+      </div>
+      <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+        <span></span><span></span><span></span>
+      </button>
+    </section>
 
-    </main>
+    <!-- Nouveaux Slides Microsoft Learn -->
 
+    <!-- Slide n°6 : Microsoft Learn - Achievements Overview -->
+    <section id="certification-mslearn-overview" class="certification-slide">
+      <div class="content-container">
+        <div class="cert-text">
+          <h2>Microsoft Learn - Achievements Overview</h2>
+          <p>
+            Cette certification atteste d'un ensemble de compétences acquises via Microsoft Learn. Elle couvre des modules tels que : 
+            <strong>Fondamentaux du cloud computing</strong>, <strong>Introduction aux services Microsoft</strong> et <strong>Bonnes pratiques en développement</strong>.
+          </p>
+          <p>
+            <strong>Utilité professionnelle</strong> : Elle offre une vue d'ensemble des compétences techniques essentielles pour la transformation digitale et l'intégration de solutions innovantes.
+          </p>
+          <p class="citation"></p>
+        </div>
+        <div class="cert-image">
+          <img src="assets/images/ms_learn_ds.png" alt="Microsoft Learn Achievements Overview">
+        </div>
+      </div>
+      <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+        <span></span><span></span><span></span>
+      </button>
+    </section>
+
+    <!-- Slide n°7 : Microsoft Learn - Create ML -->
+    <section id="certification-mslearn-create-ml" class="certification-slide">
+      <div class="content-container">
+        <div class="cert-text">
+          <h2>Microsoft Learn - Create ML</h2>
+          <p>
+            Cette certification se concentre sur la création de modèles de machine learning à l'aide des outils Microsoft. Les modules incluent : 
+            <strong>Préparation et nettoyage des données</strong>, <strong>Entraînement de modèles</strong>, <strong>Réglage des paramètres</strong> et <strong>Déploiement sur le cloud</strong>.
+          </p>
+          <p>
+            <strong>Utilité professionnelle</strong> : Elle renforce la capacité à développer et optimiser des modèles prédictifs, compétences transférables dans de nombreux contextes technologiques.
+          </p>
+          <p class="citation"></p>
+        </div>
+        <div class="cert-image">
+          <img src="assets/images/ms_learn_ml.png" alt="Microsoft Learn - Create ML">
+        </div>
+      </div>
+      <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+        <span></span><span></span><span></span>
+      </button>
+    </section>
+
+    <!-- Slide n°8 : Microsoft Learn - Data Science -->
+    <section id="certification-mslearn-ds" class="certification-slide">
+      <div class="content-container">
+        <div class="cert-text">
+          <h2>Microsoft Learn - Data Science</h2>
+          <p>
+            Cette certification couvre les fondamentaux de la science des données. Les modules abordent : 
+            <strong>Analyse exploratoire des données</strong>, <strong>Visualisation</strong>, <strong>Modélisation prédictive</strong> et <strong>Interprétation des résultats</strong>.
+          </p>
+          <p>
+            <strong>Utilité professionnelle</strong> : Elle permet d’acquérir une expertise dans l’analyse et la transformation de données en insights exploitables, utiles dans divers projets technologiques.
+          </p>
+          <p class="citation"></p>
+        </div>
+        <div class="cert-image">
+          <img src="assets/images/ms_learn_ds_2.png" alt="Microsoft Learn - Data Science">
+        </div>
+      </div>
+      <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+        <span></span><span></span><span></span>
+      </button>
+    </section>
+
+    <!-- Slide n°9 : Microsoft Learn - Computer Vision -->
+    <section id="certification-mslearn-cv" class="certification-slide">
+      <div class="content-container">
+        <div class="cert-text">
+          <h2>Microsoft Learn - Computer Vision</h2>
+          <p>
+            Cette certification se concentre sur l’exploration des techniques de traitement d’images et d’extraction d’informations visuelles. Les modules abordent : 
+            <strong>Fondamentaux du traitement d'images</strong>, <strong>Analyse des caractéristiques visuelles</strong> et <strong>Utilisation d’outils cloud pour l’optimisation des modèles</strong>.
+          </p>
+          <p>
+            <strong>Utilité professionnelle</strong> : Elle offre des compétences solides pour comprendre et appliquer des techniques avancées dans divers projets technologiques.
+          </p>
+          <p class="citation"></p>
+        </div>
+        <div class="cert-image">
+          <img src="assets/images/ms_learn_cv.png" alt="Microsoft Learn - Computer Vision">
+        </div>
+      </div>
+      <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Scroll to next slide">
+        <span></span><span></span><span></span>
+      </button>
+    </section>
+  </main>
+</body>
 </html>

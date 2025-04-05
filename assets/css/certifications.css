@@ -29,14 +29,16 @@ html, body, section,main {
   
   /* Styles d’alternance pour différencier un slide sur deux : */
   section:nth-of-type(even) {
-    background: #000;
-    color: #fff;
+    background: #40513B;
+    color: #EDF1D6;
   }
   
   section:nth-of-type(odd) {
-    background: #fff;
-    color: #000;
+    background: #EDF1D6;
+    color: #40513B;
   }
+
+
   body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -57,12 +59,51 @@ html, body, section,main {
 
 
 /* Le contenu prend l'espace restant et est centré */
+/* ...existing code... */
+
+/* Updated content container for side-by-side layout */
 .content-container {
   flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Change from column to row */
   align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* Left side with text content */
+.cert-text {
+  flex: 1;
+  padding-right: 40px;
+}
+
+/* Right side with image */
+.cert-image {
+  flex: 1;
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.cert-image img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    width: 90%;
+  }
+  
+  .cert-text {
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
 }
   
   footer {
@@ -97,6 +138,7 @@ html, body, section,main {
     background: transparent;
     border: none;
     padding: 0;
+    padding-bottom: 3rem;
     cursor: pointer;
     appearance: none;
   }
@@ -104,15 +146,27 @@ html, body, section,main {
   .arrow span {
     width: 1rem;
     height: 1rem;
-    border-bottom: 4px solid #000;
-    border-right: 4px solid #000;
     transform: rotate(135deg);
-    animation: arrow-fade 2s infinite;
+    animation: arrow-fade 2s infinite;;
   }
   
   .arrow span:nth-child(2) { animation-delay: -0.2s; }
   .arrow span:nth-child(3) { animation-delay: -0.4s; }
   
+/* Arrow colors for even sections (dark background) */
+section:nth-of-type(even) .arrow span {
+  border-bottom: 4px solid #EDF1D6;
+  border-right: 4px solid #EDF1D6;
+}
+
+/* Arrow colors for odd sections (light background) */
+section:nth-of-type(odd) .arrow span {
+  border-bottom: 4px solid #40513B;
+  border-right: 4px solid #40513B;
+}
+
+
+
   @keyframes arrow-fade {
     0% {
       opacity: 0;
