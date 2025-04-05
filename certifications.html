@@ -4,6 +4,14 @@
   }
 </script>
 
+<script>
+  fetch('assets/html/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    });
+</script>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,9 +20,14 @@
   <link rel="stylesheet" href="assets/css/certifications.css">
 </head>
 <body>
+  <!-- Déplacez le header-placeholder ici, à l'extérieur de main -->
+  <div id="header-placeholder"></div>
+  
   <main>
     <!-- Slide 1 : AI for All: From Basics to GenAI Practice -->
     <section id="certification-ai-for-all" class="certification-slide">
+      <!-- Supprimez la ligne avec header-placeholder qui était ici -->
+
       <div class="content-container">
         <div class="cert-text">
           <h2>AI for All: From Basics to GenAI Practice</h2>
@@ -154,7 +167,7 @@
         <p class="citation">&#8203;:contentReference[oaicite:0]{index=0}</p>
       </div>
       <div class="cert-image">
-        <img src="assets/images/mslearn_overview.png" alt="Machine Learning Foundations Using Data Science">
+        <img src="assets/images/ms_learn_ds_2.png" alt="Machine Learning Foundations Using Data Science">
       </div>
     </div>
     <button class="arrow" type="button" onclick="scrollToNextSlide()" aria-label="Passer à la slide suivante">

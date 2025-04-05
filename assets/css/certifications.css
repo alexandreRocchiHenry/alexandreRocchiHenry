@@ -179,3 +179,17 @@ section:nth-of-type(odd) .arrow span {
     }
   }
   
+  /* Style pour le header dans la première slide */
+  #header-placeholder {
+    position: fixed; /* Change absolute to fixed pour qu'il reste en haut lors du défilement */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100; /* Garder au-dessus des autres éléments */
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  .certification-slide .content-container {
+    padding-top: 80px;
+
+  }
